@@ -109,7 +109,7 @@
             display: block;
         }
         
-        h2, h3, h4 {
+        h2, h3, h4, h5 {
             font-family: 'Roboto', sans-serif;
             font-weight: 700;
         }
@@ -133,6 +133,13 @@
             font-size: 1.2em;
             color: var(--header-bg);
             font-style: italic;
+        }
+        
+        h5 {
+            font-size: 1.1em;
+            color: var(--secondary-accent-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
         }
 
         p, li {
@@ -229,7 +236,7 @@
         /* Password Protection Styles */
         .tab-button.locked {
             opacity: 0.6;
-            cursor: pointer; /* Allow click to show modal */
+            cursor: pointer;
         }
         .tab-button.locked:hover {
             background-color: #d8e0e6;
@@ -294,6 +301,10 @@
             background-color: var(--header-bg);
         }
         
+        .modal-content button.loading {
+            color: transparent;
+        }
+
         .modal-content button.loading::after {
             content: '';
             position: absolute;
@@ -311,12 +322,8 @@
         }
 
         @keyframes button-loading-spinner {
-            from {
-                transform: rotate(0turn);
-            }
-            to {
-                transform: rotate(1turn);
-            }
+            from { transform: rotate(0turn); }
+            to { transform: rotate(1turn); }
         }
         
         #password-error {
@@ -524,7 +531,7 @@
             <p>Constatările privind "densitatea non-minerală scăzută" și un "coeficient crescut de osteoporoză" sunt extrem de importante și necesită o intervenție imediată. Apariția acestor markeri la un copil de 11 ani este un semnal de alarmă, indicând un dezechilibru sever între formarea și resorbția osoasă.</p>
         
             <h3>Fereastra critică pentru masa osoasă maximă</h3>
-            <p>Copilăria și adolescența reprezintă o fereastră de oportunitate unică pentru acumularea masei osoase. Capitalul osos maxim (Peak Bone Mass), atins în jurul vârstei de 20-25 de ani, determină riscul de osteoporoză la vârsta adultă. [41, 42] O densitate osoasă scăzută la 11 ani sugerează că acest proces fundamental este deja compromis.</p>
+            <p>Copilăria și adolescența reprezintă o fereastră de oportunitate unică și limitată în timp pentru acumularea masei osoase. Capitalul osos maxim (Peak Bone Mass), atins în jurul vârstei de 20-25 de ani, determină riscul de osteoporoză la vârsta adultă. [41, 42] O densitate osoasă scăzută la 11 ani sugerează că acest proces fundamental este deja compromis.</p>
             <p>Cauzele sunt direct legate de problemele identificate anterior: disponibilitatea energetică scăzută (organismul "canibalizează" osul pentru energie), malabsorbția nutrienților și deficiențele de cofactori (<a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, <a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a>, <a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a>, <a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">vitamina C</a>, D). Tratarea sănătății osoase în izolare, prin simpla administrare de <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a>, este sortită eșecului. Abordarea trebuie să fie integrată.</p>
         
             <h3>Matricea nutrienților pentru construcția osoasă: o abordare sinergică</h3>
@@ -740,9 +747,13 @@
                 <li><strong>Oceanmin:</strong> Conține un concentrat de peste 70 de minerale din apele oceanice de mare adâncime. Este o sursă excelentă de <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, un mineral esențial pentru funcția musculară, producția de energie și combaterea oboselii, fiind deosebit de util pentru un sportiv cu deficit confirmat.</li>
             </ul>
 
-            <h5>2. Suport cu micronutrienți pentru copii (FitLine - PM International)</h5>
+            <h5>2. Suport cu micronutrienți și sănătate intestinală (Coral Club & FitLine)</h5>
             <ul>
-                <li><strong>PowerCocktail Junior:</strong> Este un complex special conceput pentru copii, care combină vitamine și minerale esențiale. Conține vitaminele din complexul B (inclusiv <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">B1</a> și <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">B2</a>) pentru metabolismul energetic, <a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">vitamina C</a> pentru imunitate și sinteza colagenului, <a href="https://vitmin.netlify.app/vitamina_e.html" target="_blank">vitamina E</a> ca antioxidant, precum și minerale cheie precum <a href="https://vitmin.netlify.app/seleniu.html" target="_blank">seleniu</a> și <a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a>. Conceptul NTC® (Nutrient Transport Concept) specific mărcii urmărește o biodisponibilitate crescută, fiind o opțiune bună pentru a adresa multiplele deficite identificate.</li>
+                <li><strong>Super-Flora (Coral Club):</strong> Produs care combină probiotice (bifido- și lactobacterii) cu prebioticul inulină. Este o alegere excelentă pentru a reface microbiota intestinală, a îmbunătăți digestia și a crește absorbția nutrienților.</li>
+                <li><strong>Coral-Magnesium (Coral Club):</strong> Conținând forme cu absorbție superioară (taurat și glicinat), este ideal pentru repleția rapidă a deficitului de <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, esențial pentru funcția musculară și osoasă.</li>
+                <li><strong>Tasty B (Coral Club):</strong> Un complex de vitamine B într-o formă masticabilă, potrivită pentru copii, care poate ajuta la deblocarea căilor metabolice energetice și proteice.</li>
+                <li><strong>Zinc 25 mg & Selenium 100 mcg (Coral Club):</strong> Suplimente dedicate pentru corectarea țintită a deficitelor de <a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a> și <a href="https://vitmin.netlify.app/seleniu.html" target="_blank">seleniu</a>, respectând dozajul indicat de specialist.</li>
+                <li><strong>PowerCocktail Junior (FitLine):</strong> Este un complex special conceput pentru copii, care combină vitamine și minerale esențiale. Conține vitaminele din complexul B (inclusiv <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">B1</a> și <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">B2</a>), <a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">vitamina C</a>, <a href="https://vitmin.netlify.app/vitamina_e.html" target="_blank">vitamina E</a>, precum și minerale cheie. Conceptul NTC® (Nutrient Transport Concept) specific mărcii urmărește o biodisponibilitate crescută, fiind o opțiune bună pentru a adresa multiplele deficite identificate.</li>
             </ul>
 
             <h3>Dincolo de farfurie: rolul somnului și al recuperării</h3>
@@ -859,17 +870,6 @@
         </div>
     </div>
 
-    <!-- Password Modal -->
-    <div id="password-modal" class="modal-overlay">
-        <div class="modal-content">
-            <h3>Acces restricționat</h3>
-            <p>Pentru a vizualiza acest conținut, vă rugăm introduceți parola.</p>
-            <p id="password-error"></p>
-            <input type="password" id="password-input" placeholder="Parola...">
-            <button id="submit-password">Confirmă</button>
-        </div>
-    </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const tabButtons = document.querySelectorAll('.tab-button');
@@ -879,13 +879,15 @@
             const submitPasswordBtn = document.getElementById('submit-password');
             const passwordError = document.getElementById('password-error');
 
-            // HASH-ul SHA-256 pentru parola "Andi2025"
-            // Parola nu este stocată în clar în cod.
+            if (!modal || !passwordInput || !submitPasswordBtn || !passwordError || tabButtons.length === 0) {
+                console.error("Initialization failed: One or more required elements are missing from the DOM.");
+                return;
+            }
+
             const correctPasswordHash = 'c2ff37419452a1a115858913b849b2518d64121575c872439164601673851509';
             let isUnlocked = false;
             let requestedTab = null;
 
-            // Funcție pentru a genera hash-ul SHA-256 al unui string
             async function hash(string) {
                 const utf8 = new TextEncoder().encode(string);
                 const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
@@ -896,13 +898,10 @@
                 return hashHex;
             }
 
-            // Inițializarea tab-urilor la încărcarea paginii
             function initializeTabs() {
-                // Setează primul tab ca fiind activ
                 tabButtons[0].classList.add('active');
                 document.getElementById(tabButtons[0].dataset.tab).classList.add('active');
 
-                // Blochează tab-urile protejate
                 tabButtons.forEach((btn, index) => {
                     if (index > 0) {
                         btn.classList.add('locked');
@@ -934,18 +933,26 @@
 
             async function checkPassword() {
                 const enteredPassword = passwordInput.value;
-                if (!enteredPassword) return;
+                if (!enteredPassword || submitPasswordBtn.classList.contains('loading')) return;
 
                 submitPasswordBtn.classList.add('loading');
-                const enteredPasswordHash = await hash(enteredPassword);
-                submitPasswordBtn.classList.remove('loading');
+                submitPasswordBtn.disabled = true;
 
-                if (enteredPasswordHash === correctPasswordHash) {
-                    unlockTabs();
-                } else {
-                    passwordError.textContent = 'Parolă incorectă. Încercați din nou.';
-                    passwordInput.value = '';
-                    passwordInput.focus();
+                try {
+                    const enteredPasswordHash = await hash(enteredPassword);
+                    if (enteredPasswordHash === correctPasswordHash) {
+                        unlockTabs();
+                    } else {
+                        passwordError.textContent = 'Parolă incorectă. Încercați din nou.';
+                        passwordInput.value = '';
+                        passwordInput.focus();
+                    }
+                } catch (error) {
+                    console.error("Password hashing failed:", error);
+                    passwordError.textContent = 'Eroare la verificarea parolei.';
+                } finally {
+                    submitPasswordBtn.classList.remove('loading');
+                    submitPasswordBtn.disabled = false;
                 }
             }
 
@@ -965,13 +972,12 @@
             submitPasswordBtn.addEventListener('click', checkPassword);
             
             passwordInput.addEventListener('keyup', function(event) {
-                passwordError.textContent = ''; // Clear error on new input
+                passwordError.textContent = '';
                 if (event.key === 'Enter') {
                     submitPasswordBtn.click();
                 }
             });
 
-            // Închide fereastra modală dacă se dă click în afara ei
             modal.addEventListener('click', function(event) {
                 if (event.target === modal) {
                     modal.style.display = 'none';
