@@ -34,7 +34,7 @@
             font-weight: 400;
         }
 
-      .main-container {
+       .main-container {
             max-width: 900px;
             margin: 20px auto;
             background-color: var(--container-bg-color);
@@ -44,34 +44,34 @@
             border: 1px solid var(--border-color);
         }
         
-      .page-header {
+        .page-header {
             background-color: var(--header-bg);
             color: white;
             padding: 25px 30px;
         }
         
-      .page-header h1 {
+        .page-header h1 {
             color: white;
             margin: 0;
             font-size: 2.2em;
             font-weight: 700;
         }
         
-      .page-header p {
+        .page-header p {
             color: #bdc3c7;
             margin: 5px 0 0;
             font-size: 1.1em;
             font-weight: 300;
         }
 
-      .tab-container {
+       .tab-container {
             display: flex;
             flex-wrap: wrap;
             background-color: var(--tab-inactive-bg);
             border-bottom: 1px solid var(--border-color);
         }
 
-      .tab-button {
+       .tab-button {
             flex-grow: 1;
             padding: 15px 10px;
             cursor: pointer;
@@ -86,18 +86,18 @@
             text-align: center;
         }
 
-      .tab-button:hover {
+       .tab-button:hover {
             background-color: #d8e0e6;
             color: var(--primary-accent-color);
         }
 
-      .tab-button.active {
+       .tab-button.active {
             background-color: var(--tab-active-bg);
             color: var(--primary-accent-color);
             border-bottom: 4px solid var(--primary-accent-color);
         }
 
-      .tab-content {
+       .tab-content {
             display: none;
             padding: 25px 30px;
             min-height: 70vh;
@@ -105,7 +105,7 @@
             overflow-y: auto;
        }
 
-      .tab-content.active {
+       .tab-content.active {
             display: block;
         }
         
@@ -196,7 +196,7 @@
             border-radius: 0 5px 5px 0;
         }
         
-      .summary-box {
+        .summary-box {
             background-color: var(--summary-box-bg);
             border: 1px solid var(--summary-box-border);
             border-left: 5px solid var(--primary-accent-color);
@@ -204,27 +204,27 @@
             margin: 20px 0;
             border-radius: 8px;
         }
-      .summary-box h4 {
+        .summary-box h4 {
             margin-top: 0;
             color: var(--header-bg);
             font-style: normal;
         }
-      .summary-box ol,.summary-box ul {
+        .summary-box ol, .summary-box ul {
             padding-left: 20px;
         }
 
-      .bibliography-list {
+       .bibliography-list {
             list-style-type: none;
             padding-left: 0;
             counter-reset: item;
         }
-     .bibliography-list li {
+       .bibliography-list li {
             margin-bottom: 15px;
             padding-left: 35px;
             position: relative;
             text-align: left;
        }
-     .bibliography-list li::before {
+       .bibliography-list li::before {
             content: "[" counter(item) "]";
             counter-increment: item;
             position: absolute;
@@ -234,16 +234,16 @@
         }
         
         /* Password Protection Styles */
-      .tab-button.locked {
+        .tab-button.locked {
             opacity: 0.6;
             cursor: pointer;
         }
-      .tab-button.locked:hover {
+        .tab-button.locked:hover {
             background-color: #d8e0e6;
             color: var(--secondary-text-color);
         }
 
-      .modal-overlay {
+        .modal-overlay {
             display: none;
             position: fixed;
             z-index: 1000;
@@ -257,7 +257,7 @@
             align-items: center;
         }
 
-      .modal-content {
+        .modal-content {
             background-color: #fefefe;
             padding: 30px 40px;
             border: 1px solid #888;
@@ -268,12 +268,12 @@
             text-align: center;
         }
         
-      .modal-content h3 {
+        .modal-content h3 {
             margin-top: 0;
             color: var(--header-bg);
         }
         
-      .modal-content input[type="password"] {
+        .modal-content input[type="password"] {
             width: 100%;
             padding: 12px;
             margin: 10px 0 20px 0;
@@ -283,7 +283,7 @@
             box-sizing: border-box;
         }
 
-      .modal-content button {
+        .modal-content button {
             background-color: var(--primary-accent-color);
             color: white;
             padding: 14px 20px;
@@ -294,36 +294,10 @@
             width: 100%;
             font-size: 16px;
             font-weight: 700;
-            position: relative;
         }
         
-      .modal-content button:hover {
+        .modal-content button:hover {
             background-color: var(--header-bg);
-        }
-        
-      .modal-content button.loading {
-            color: transparent;
-        }
-
-      .modal-content button.loading::after {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-            border: 4px solid transparent;
-            border-top-color: #ffffff;
-            border-radius: 50%;
-            animation: button-loading-spinner 1s ease infinite;
-        }
-
-        @keyframes button-loading-spinner {
-            from { transform: rotate(0turn); }
-            to { transform: rotate(1turn); }
         }
         
         #password-error {
@@ -881,143 +855,112 @@
             </ol>
         </div>
     </div>
+
+    <!-- Password Modal -->
     <div id="password-modal" class="modal-overlay">
         <div class="modal-content">
-            <h3>Introduceți parola pentru a continua</h3>
+            <h3>Acces restricționat</h3>
+            <p>Pentru a vizualiza acest conținut, vă rugăm introduceți parola.</p>
             <p id="password-error"></p>
             <input type="password" id="password-input" placeholder="Parola...">
-            <button id="submit-password">Deblocare</button>
+            <button id="submit-password">Confirmă</button>
         </div>
     </div>
 
     <script>
-        // IIFE pentru a evita poluarea scopului global
-        (function() {
-            // Regula de aur: Așteaptă ca DOM-ul să fie complet încărcat
-            document.addEventListener('DOMContentLoaded', function() {
-                // Stocarea în cache a referințelor la elementele DOM
-                const tabButtons = document.querySelectorAll('.tab-button');
-                const tabContents = document.querySelectorAll('.tab-content');
-                const modal = document.getElementById('password-modal');
-                const passwordInput = document.getElementById('password-input');
-                const submitPasswordBtn = document.getElementById('submit-password');
-                const passwordError = document.getElementById('password-error');
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const modal = document.getElementById('password-modal');
+            const passwordInput = document.getElementById('password-input');
+            const submitPasswordBtn = document.getElementById('submit-password');
+            const passwordError = document.getElementById('password-error');
 
-                // Programare defensivă: Verificarea existenței elementelor
-                if (!modal ||!passwordInput ||!submitPasswordBtn ||!passwordError |
-                    | tabButtons.length === 0) {
-                    console.error("Initialization failed: One or more required elements are missing from the DOM.");
-                    return; 
+            // Check if all necessary elements were found
+            if (!modal || !passwordInput || !submitPasswordBtn || !passwordError || tabButtons.length === 0) {
+                console.error("Initialization failed: One or more required elements are missing from the DOM.");
+                return; // Stop script execution if elements are missing
+            }
+
+            const correctPassword = 'Andi2025';
+            let isUnlocked = false;
+            let requestedTab = null;
+
+            function initializeTabs() {
+                tabButtons[0].classList.add('active');
+                document.getElementById(tabButtons[0].dataset.tab).classList.add('active');
+
+                tabButtons.forEach((btn, index) => {
+                    if (index > 0) {
+                        btn.classList.add('locked');
+                    }
+                });
+            }
+
+            function openTab(tabId) {
+                tabContents.forEach(content => content.classList.remove('active'));
+                tabButtons.forEach(button => button.classList.remove('active'));
+
+                document.getElementById(tabId).classList.add('active');
+                document.querySelector(`.tab-button[data-tab="${tabId}"]`).classList.add('active');
+            }
+
+            function unlockTabs() {
+                isUnlocked = true;
+                document.querySelectorAll('.tab-button.locked').forEach(btn => {
+                    btn.classList.remove('locked');
+                });
+                modal.style.display = 'none';
+                passwordInput.value = '';
+                passwordError.textContent = '';
+                if (requestedTab) {
+                    openTab(requestedTab);
+                    requestedTab = null;
                 }
-
-                const correctPasswordHash = 'c2ff37419452a1a115858913b849b2518d64121575c872439164601673851509';
-                let isUnlocked = false;
-                let requestedTab = null;
-
-                async function hash(string) {
-                    const utf8 = new TextEncoder().encode(string);
-                    const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
-                    const hashArray = Array.from(new Uint8Array(hashBuffer));
-                    const hashHex = hashArray
-                      .map((b) => b.toString(16).padStart(2, '0'))
-                      .join('');
-                    return hashHex;
-                }
-
-                function initializeTabs() {
-                    // FIX 2: Se aplică clasa 'active' pe PRIMUL ELEMENT (tabButtons), nu pe întreaga listă.
-                    tabButtons.classList.add('active');
-                    document.getElementById(tabButtons.dataset.tab).classList.add('active');
-
-                    tabButtons.forEach((btn, index) => {
-                        if (index > 0) {
-                            btn.classList.add('locked');
-                        }
-                    });
-                }
-
-                function openTab(tabId) {
-                    tabContents.forEach(content => content.classList.remove('active'));
-                    tabButtons.forEach(button => button.classList.remove('active'));
-
-                    document.getElementById(tabId).classList.add('active');
-                    document.querySelector(`.tab-button[data-tab="${tabId}"]`).classList.add('active');
-                }
-
-                function unlockTabs() {
-                    isUnlocked = true;
-                    document.querySelectorAll('.tab-button.locked').forEach(btn => {
-                        btn.classList.remove('locked');
-                    });
-                    modal.style.display = 'none';
+            }
+            
+            function checkPassword() {
+                if (passwordInput.value === correctPassword) {
+                    unlockTabs();
+                } else {
+                    passwordError.textContent = 'Parolă incorectă. Încercați din nou.';
                     passwordInput.value = '';
-                    passwordError.textContent = '';
-                    if (requestedTab) {
-                        openTab(requestedTab);
-                        requestedTab = null;
-                    }
+                    passwordInput.focus();
                 }
+            }
 
-                async function checkPassword() {
-                    const enteredPassword = passwordInput.value;
-                    if (!enteredPassword |
-
-| submitPasswordBtn.classList.contains('loading')) return;
-
-                    submitPasswordBtn.classList.add('loading');
-                    submitPasswordBtn.disabled = true;
-
-                    try {
-                        const enteredPasswordHash = await hash(enteredPassword);
-                        if (enteredPasswordHash === correctPasswordHash) {
-                            unlockTabs();
-                        } else {
-                            passwordError.textContent = 'Parolă incorectă. Încercați din nou.';
-                            passwordInput.value = '';
-                            passwordInput.focus();
-                        }
-                    } catch (error) {
-                        console.error("Password hashing failed:", error);
-                        passwordError.textContent = 'Eroare la verificarea parolei.';
-                    } finally {
-                        submitPasswordBtn.classList.remove('loading');
-                        submitPasswordBtn.disabled = false;
-                    }
-                }
-
-                tabButtons.forEach(button => {
-                    button.addEventListener('click', function() {
-                        const tabId = this.dataset.tab;
-                        if (this.classList.contains('protected') &&!isUnlocked) {
-                            requestedTab = tabId;
-                            modal.style.display = 'flex';
-                            passwordInput.focus();
-                        } else if (!this.classList.contains('locked')) {
-                            openTab(tabId);
-                        }
-                    });
-                });
-
-                submitPasswordBtn.addEventListener('click', checkPassword);
-                
-                passwordInput.addEventListener('keyup', function(event) {
-                    passwordError.textContent = '';
-                    if (event.key === 'Enter') {
-                        submitPasswordBtn.click();
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabId = this.dataset.tab;
+                    if (this.classList.contains('protected') && !isUnlocked) {
+                        requestedTab = tabId;
+                        modal.style.display = 'flex';
+                        passwordInput.focus();
+                    } else if (!this.classList.contains('locked')) {
+                        openTab(tabId);
                     }
                 });
-
-                modal.addEventListener('click', function(event) {
-                    if (event.target === modal) {
-                        modal.style.display = 'none';
-                        passwordError.textContent = '';
-                        passwordInput.value = '';
-                    }
-                });
-
-                initializeTabs();
             });
-        })();
+
+            submitPasswordBtn.addEventListener('click', checkPassword);
+            
+            passwordInput.addEventListener('keyup', function(event) {
+                passwordError.textContent = '';
+                if (event.key === 'Enter') {
+                    submitPasswordBtn.click();
+                }
+            });
+
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    passwordError.textContent = '';
+                    passwordInput.value = '';
+                }
+            });
+
+            initializeTabs();
+        });
     </script>
 
 </body>
