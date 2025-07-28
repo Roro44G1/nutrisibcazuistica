@@ -34,7 +34,7 @@
             font-weight: 400;
         }
 
-       .main-container {
+      .main-container {
             max-width: 900px;
             margin: 20px auto;
             background-color: var(--container-bg-color);
@@ -44,34 +44,34 @@
             border: 1px solid var(--border-color);
         }
         
-        .page-header {
+      .page-header {
             background-color: var(--header-bg);
             color: white;
             padding: 25px 30px;
         }
         
-        .page-header h1 {
+      .page-header h1 {
             color: white;
             margin: 0;
             font-size: 2.2em;
             font-weight: 700;
         }
         
-        .page-header p {
+      .page-header p {
             color: #bdc3c7;
             margin: 5px 0 0;
             font-size: 1.1em;
             font-weight: 300;
         }
 
-       .tab-container {
+      .tab-container {
             display: flex;
             flex-wrap: wrap;
             background-color: var(--tab-inactive-bg);
             border-bottom: 1px solid var(--border-color);
         }
 
-       .tab-button {
+      .tab-button {
             flex-grow: 1;
             padding: 15px 10px;
             cursor: pointer;
@@ -86,18 +86,18 @@
             text-align: center;
         }
 
-       .tab-button:hover {
+      .tab-button:hover {
             background-color: #d8e0e6;
             color: var(--primary-accent-color);
         }
 
-       .tab-button.active {
+      .tab-button.active {
             background-color: var(--tab-active-bg);
             color: var(--primary-accent-color);
             border-bottom: 4px solid var(--primary-accent-color);
         }
 
-       .tab-content {
+      .tab-content {
             display: none;
             padding: 25px 30px;
             min-height: 70vh;
@@ -105,11 +105,11 @@
             overflow-y: auto;
        }
 
-       .tab-content.active {
+      .tab-content.active {
             display: block;
         }
         
-        h2, h3, h4 {
+        h2, h3, h4, h5 {
             font-family: 'Roboto', sans-serif;
             font-weight: 700;
         }
@@ -133,6 +133,13 @@
             font-size: 1.2em;
             color: var(--header-bg);
             font-style: italic;
+        }
+        
+        h5 {
+            font-size: 1.1em;
+            color: var(--secondary-accent-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
         }
 
         p, li {
@@ -189,7 +196,7 @@
             border-radius: 0 5px 5px 0;
         }
         
-        .summary-box {
+      .summary-box {
             background-color: var(--summary-box-bg);
             border: 1px solid var(--summary-box-border);
             border-left: 5px solid var(--primary-accent-color);
@@ -197,27 +204,27 @@
             margin: 20px 0;
             border-radius: 8px;
         }
-        .summary-box h4 {
+      .summary-box h4 {
             margin-top: 0;
             color: var(--header-bg);
             font-style: normal;
         }
-        .summary-box ol, .summary-box ul {
+      .summary-box ol,.summary-box ul {
             padding-left: 20px;
         }
 
-       .bibliography-list {
+      .bibliography-list {
             list-style-type: none;
             padding-left: 0;
             counter-reset: item;
         }
-       .bibliography-list li {
+     .bibliography-list li {
             margin-bottom: 15px;
             padding-left: 35px;
             position: relative;
             text-align: left;
        }
-       .bibliography-list li::before {
+     .bibliography-list li::before {
             content: "[" counter(item) "]";
             counter-increment: item;
             position: absolute;
@@ -227,16 +234,16 @@
         }
         
         /* Password Protection Styles */
-        .tab-button.locked {
+      .tab-button.locked {
             opacity: 0.6;
-            cursor: not-allowed;
+            cursor: pointer;
         }
-        .tab-button.locked:hover {
-            background-color: var(--tab-inactive-bg);
+      .tab-button.locked:hover {
+            background-color: #d8e0e6;
             color: var(--secondary-text-color);
         }
 
-        .modal-overlay {
+      .modal-overlay {
             display: none;
             position: fixed;
             z-index: 1000;
@@ -250,7 +257,7 @@
             align-items: center;
         }
 
-        .modal-content {
+      .modal-content {
             background-color: #fefefe;
             padding: 30px 40px;
             border: 1px solid #888;
@@ -261,12 +268,12 @@
             text-align: center;
         }
         
-        .modal-content h3 {
+      .modal-content h3 {
             margin-top: 0;
             color: var(--header-bg);
         }
         
-        .modal-content input[type="password"] {
+      .modal-content input[type="password"] {
             width: 100%;
             padding: 12px;
             margin: 10px 0 20px 0;
@@ -276,7 +283,7 @@
             box-sizing: border-box;
         }
 
-        .modal-content button {
+      .modal-content button {
             background-color: var(--primary-accent-color);
             color: white;
             padding: 14px 20px;
@@ -287,10 +294,36 @@
             width: 100%;
             font-size: 16px;
             font-weight: 700;
+            position: relative;
         }
         
-        .modal-content button:hover {
+      .modal-content button:hover {
             background-color: var(--header-bg);
+        }
+        
+      .modal-content button.loading {
+            color: transparent;
+        }
+
+      .modal-content button.loading::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border: 4px solid transparent;
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: button-loading-spinner 1s ease infinite;
+        }
+
+        @keyframes button-loading-spinner {
+            from { transform: rotate(0turn); }
+            to { transform: rotate(1turn); }
         }
         
         #password-error {
@@ -342,8 +375,8 @@
                     <li>Urobilinogen crescut</li>
                     <li>Densitate non-minerală osoasă scăzută</li>
                     <li>Coeficient crescut de osteoporoză</li>
-                    <li>Deficit de zinc, seleniu, potasiu, magneziu, cupru</li>
-                    <li>Deficit de vitamina B1, B2, C, E</li>
+                    <li>Deficit de <a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a>, <a href="https://vitmin.netlify.app/seleniu.html" target="_blank">seleniu</a>, <a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a>, <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, <a href="https://vitmin.netlify.app/cupru.html" target="_blank">cupru</a></li>
+                    <li>Deficit de <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">vitamina B1</a>, <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">B2</a>, <a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">C</a>, <a href="https://vitmin.netlify.app/vitamina_e.html" target="_blank">E</a></li>
                     <li>Dezechilibre de aminoacizi (exces ușor de lizină, triptofan, treonină, histidină, arginină)</li>
                     <li>Semne de deshidratare și deficit de electroliți</li>
                 </ol>
@@ -385,7 +418,7 @@
                         <li>Vitaminele din complexul B (inclusiv <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">Vitamina B1</a> și <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">Vitamina B2</a>): Vitale pentru producția de energie și funcția neurologică, sunt consumate rapid în perioade de stres. [16]</li>
                         <li><a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">Vitamina C</a>: Concentrată în glandele suprarenale, este utilizată masiv pentru producția de cortizol. [16]</li>
                     </ul>
-                    Acest proces de epuizare se aliniază perfect cu deficitele de <strong>zinc, magneziu, vitamina B1, B2 și C</strong> identificate la Andi David.
+                    Acest proces de epuizare se aliniază perfect cu deficitele de <strong><a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a>, <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">vitamina B1</a>, <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">B2</a> și <a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">C</a></strong> identificate la Andi David.
                 </li>
                 <li><strong>Impactul asupra sistemului scheletic:</strong> Hormonul principal al stresului cronic, <strong>cortizolul</strong>, are un efect direct distructiv asupra oaselor. Nivelurile ridicate de cortizol:
                     <ul>
@@ -425,8 +458,8 @@
             <p>Pentru o estimare mai precisă, se poate utiliza ecuația Mifflin-St Jeor pentru a calcula Rata Metabolică Bazală (BMR) – energia consumată în repaus. [24]</p>
             <ul>
                 <li><strong>Calcul BMR:</strong><br>
-                    BMR(10 × greutatea în kg) + (6.25 × înălțimea în cm) - (5 × vârsta în ani) + 5<br>
-                    BMR = (10 x 45) + (6.25 x 160) - (5 x 11) + 5 = 450 + 1000 - 55 + 5 = 1400 kcal
+                    $BMR = (10 \times greutate_{kg}) + (6.25 \times inaltime_{cm}) - (5 \times varsta_{ani}) + 5$<br>
+                    $BMR = (10 \times 45) + (6.25 \times 160) - (5 \times 11) + 5 = 450 + 1000 - 55 + 5 = 1400$ kcal
                 </li>
             </ul>
             <p>Această valoare reprezintă doar necesarul pentru funcțiile vitale. Necesarul caloric total zilnic (TDEE) se obține prin multiplicarea BMR cu un factor de activitate. Pentru 2-3 ore de antrenament intens, acest factor este de cel puțin 1.7-1.9.</p>
@@ -440,14 +473,14 @@
             <strong>Recomandare:</strong> Aportul caloric zilnic țintă ar trebui să fie de <strong>3000-3500 kcal</strong>, monitorizat și ajustat în funcție de evoluția greutății și a stării generale, sub îndrumarea unui specialist.</p>
         
             <h3>Protocolul de hidratare și electroliți: piatra de temelie a recuperării</h3>
-            <p>Deshidratarea și deficitul de electroliți, identificate în evaluare, sunt probleme critice pentru un sportiv. Hidratarea este adesea subestimată, însă este cel mai important nutrient pentru performanță, recuperare și funcționarea corectă a organelor interne. [26] Electroliții sunt minerale esențiale (precum sodiu, potasiu, magneziu, calciu) care se pierd prin transpirație și sunt vitale pentru funcția musculară, transmiterea nervoasă și menținerea echilibrului hidric în organism. Un deficit de electroliți poate duce la crampe musculare, oboseală și scăderea performanței.</p>
+            <p>Deshidratarea și deficitul de electroliți, identificate în evaluare, sunt probleme critice pentru un sportiv. Hidratarea este adesea subestimată, însă este cel mai important nutrient pentru performanță, recuperare și funcționarea corectă a organelor interne. [26] Electroliții sunt minerale esențiale (precum sodiu, <a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a>, <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a>) care se pierd prin transpirație și sunt vitale pentru funcția musculară, transmiterea nervoasă și menținerea echilibrului hidric în organism. Un deficit de electroliți poate duce la crampe musculare, oboseală și scăderea performanței.</p>
             <p>Unul dintre rezultatele anormale – <strong>urobilinogenul crescut</strong> – poate fi, de asemenea, direct legat de starea de hidratare. Deși poate semnala o patologie hepatică [27, 28], în contextul unui sportiv, este frecvent un indicator al <strong>hemolizei induse de efort</strong> (distrugerea globulelor roșii din cauza impactului mecanic al antrenamentului), combinată cu <strong>deshidratarea</strong>. [29] Deshidratarea concentrează urina, ceea ce face ca orice cantitate de urobilinogen să pară crescută, și, în același timp, pune un stres suplimentar pe ficat. [29, 30]</p>
             <p>Prin urmare, un protocol de hidratare riguros nu este doar o recomandare generală, ci o intervenție terapeutică directă.</p>
             <h4>Protocol de hidratare recomandat:</h4>
             <ul>
                 <li><strong>Hidratare de bază:</strong> Consumul a cel puțin <strong>2.5 - 3 litri de lichide pe zi</strong>, predominant apă plată, în afara antrenamentelor.</li>
                 <li><strong>Înainte de antrenament:</strong> 500-600 ml de apă cu 2-3 ore înainte și încă 200-300 ml cu 20 de minute înainte.</li>
-                <li><strong>În timpul antrenamentului:</strong> 150-250 ml de lichide la fiecare 15-20 de minute. Pentru antrenamentele care depășesc 60-90 de minute, este esențială o băutură sportivă care să conțină electroliți pentru a înlocui pierderile de <strong>potasiu și magneziu</strong> (ambele deficitare), precum și sodiu. [31]</li>
+                <li><strong>În timpul antrenamentului:</strong> 150-250 ml de lichide la fiecare 15-20 de minute. Pentru antrenamentele care depășesc 60-90 de minute, este esențială o băutură sportivă care să conțină electroliți pentru a înlocui pierderile de <strong><a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a> și <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a></strong> (ambele deficitare), precum și sodiu. [31]</li>
                 <li><strong>După antrenament (rehidratare):</strong> Refacerea pierderilor de lichide este critică. Se recomandă consumul a 1.5 litri de lichid pentru fiecare kilogram de greutate corporală pierdut în timpul antrenamentului. Utilizarea sărurilor de rehidratare orală (SRO) sau a unor băuturi de recuperare cu electroliți poate fi extrem de benefică. [32]</li>
                 <li><strong>Monitorizare:</strong> Culoarea urinei este un indicator simplu și eficient. O urină de culoarea paiului deschis indică o hidratare bună, în timp ce o culoare închisă, de chihlimbar, semnalează deshidratare. [30]</li>
             </ul>
@@ -459,7 +492,7 @@
         
             <h3>Corectarea metabolismului proteic și a dezechilibrului de aminoacizi</h3>
             <p>Rezultatele indică "ușoare deficiențe în metabolismul proteic" și un "exces ușor de lizină, triptofan, treonină, histidină, arginină". Aceste două constatări par contradictorii, dar, în realitate, ele dezvăluie o problemă metabolică mai profundă.</p>
-            <p>Excesul aparent al anumitor aminoacizi în sânge nu indică neapărat un consum prea mare, ci mai degrabă o <strong>incapacitate a organismului de a-i utiliza eficient</strong>. Acest blocaj metabolic poate fi cauzat de deficiența unor cofactori esențiali. Vitaminele din complexul B, în special <strong>vitamina B1 (tiamina) și vitamina B2 (riboflavina)</strong> – ambele deficitare în acest caz – sunt coenzime critice în metabolismul energetic și în cel al aminoacizilor. [33, 34] Fără ele, procesul de sinteză a noilor proteine este încetinit, iar aminoacizii rămân în circulație, creând un fals aspect de "exces".</p>
+            <p>Excesul aparent al anumitor aminoacizi în sânge nu indică neapărat un consum prea mare, ci mai degrabă o <strong>incapacitate a organismului de a-i utiliza eficient</strong>. Acest blocaj metabolic poate fi cauzat de deficiența unor cofactori esențiali. Vitaminele din complexul B, în special <strong><a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">vitamina B1</a> (tiamina) și <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">vitamina B2</a> (riboflavina)</strong> – ambele deficitare în acest caz – sunt coenzime critice în metabolismul energetic și în cel al aminoacizilor. [33, 34] Fără ele, procesul de sinteză a noilor proteine este încetinit, iar aminoacizii rămân în circulație, creând un fals aspect de "exces".</p>
             <h4>Strategie de intervenție:</h4>
             <ol>
                 <li><strong>Asigurarea aportului proteic:</strong> Respectarea țintei de 72-81 g de proteine pe zi, cu un accent pe diversitate și calitate.</li>
@@ -498,39 +531,39 @@
             <p>Constatările privind "densitatea non-minerală scăzută" și un "coeficient crescut de osteoporoză" sunt extrem de importante și necesită o intervenție imediată. Apariția acestor markeri la un copil de 11 ani este un semnal de alarmă, indicând un dezechilibru sever între formarea și resorbția osoasă.</p>
         
             <h3>Fereastra critică pentru masa osoasă maximă</h3>
-            <p>Copilăria și adolescența reprezintă o fereastră de oportunitate unică pentru acumularea masei osoase. Capitalul osos maxim (Peak Bone Mass), atins în jurul vârstei de 20-25 de ani, determină riscul de osteoporoză la vârsta adultă. [41, 42] O densitate osoasă scăzută la 11 ani sugerează că acest proces fundamental este deja compromis.</p>
-            <p>Cauzele sunt direct legate de problemele identificate anterior: disponibilitatea energetică scăzută (organismul "canibalizează" osul pentru energie), malabsorbția nutrienților și deficiențele de cofactori (magneziu, zinc, potasiu, vitamina C, D). Tratarea sănătății osoase în izolare, prin simpla administrare de calciu, este sortită eșecului. Abordarea trebuie să fie integrată.</p>
+            <p>Copilăria și adolescența reprezintă o fereastră de oportunitate unică și limitată în timp pentru acumularea masei osoase. Capitalul osos maxim (Peak Bone Mass), atins în jurul vârstei de 20-25 de ani, determină riscul de osteoporoză la vârsta adultă. [41, 42] O densitate osoasă scăzută la 11 ani sugerează că acest proces fundamental este deja compromis.</p>
+            <p>Cauzele sunt direct legate de problemele identificate anterior: disponibilitatea energetică scăzută (organismul "canibalizează" osul pentru energie), malabsorbția nutrienților și deficiențele de cofactori (<a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, <a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a>, <a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a>, <a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">vitamina C</a>, D). Tratarea sănătății osoase în izolare, prin simpla administrare de <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a>, este sortită eșecului. Abordarea trebuie să fie integrată.</p>
         
             <h3>Matricea nutrienților pentru construcția osoasă: o abordare sinergică</h3>
-            <p>Construirea unui os puternic necesită atât "cărămizi" (calciu), cât și o echipă de "muncitori" (ceilalți nutrienți) pentru a le asambla corect.</p>
+            <p>Construirea unui os puternic necesită atât "cărămizi" (<a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a>), cât și o echipă de "muncitori" (ceilalți nutrienți) pentru a le asambla corect.</p>
             <ul>
-                <li><strong>Calciu și Vitamina D:</strong> Duo-ul fundamental. Calciul este "cărămida", iar vitamina D este "șeful de șantier" care asigură transportul calciului. [43]
+                <li><strong><a href="https://vitmin.netlify.app/calciu.html" target="_blank">Calciu</a> și <a href="https://vitmin.netlify.app/vitamina_d.html" target="_blank">Vitamina D</a>:</strong> Duo-ul fundamental. Calciul este "cărămida", iar vitamina D este "șeful de șantier" care asigură transportul calciului. [43]
                     <ul>
-                        <li><strong>Surse de Calciu:</strong> Produse lactate, legume cu frunze verzi (broccoli, kale), tofu îmbogățit, sardine (cu oase), migdale. [41, 44]</li>
-                        <li><strong>Surse de Vitamina D:</strong> Expunerea la soare, pește gras (somon, macrou), gălbenuș de ou, alimente fortificate. [45]</li>
+                        <li><strong>Surse de <a href="https://vitmin.netlify.app/calciu.html" target="_blank">Calciu</a>:</strong> Produse lactate, legume cu frunze verzi (broccoli, kale), tofu îmbogățit, sardine (cu oase), migdale. [41, 44]</li>
+                        <li><strong>Surse de <a href="https://vitmin.netlify.app/vitamina_d.html" target="_blank">Vitamina D</a>:</strong> Expunerea la soare, pește gras (somon, macrou), gălbenuș de ou, alimente fortificate. [45]</li>
                     </ul>
                 </li>
-                <li><strong>Magneziu (Deficitar):</strong> Activează vitamina D și reglează transportul de calciu. [46]
+                <li><strong><a href="https://vitmin.netlify.app/magneziu.html" target="_blank">Magneziu</a> (Deficitar):</strong> Activează <a href="https://vitmin.netlify.app/vitamina_d.html" target="_blank">vitamina D</a> și reglează transportul de <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a>. [46]
                     <ul>
                         <li><strong>Surse:</strong> Semințe de dovleac, migdale, leguminoase, avocado, spanac. [47]</li>
                     </ul>
                 </li>
-                <li><strong>Zinc (Deficitar):</strong> Stimulează celulele formatoare de os (osteoblaste). [48]
+                <li><strong><a href="https://vitmin.netlify.app/zinc.html" target="_blank">Zinc</a> (Deficitar):</strong> Stimulează celulele formatoare de os (osteoblaste). [48]
                     <ul>
                         <li><strong>Surse:</strong> Carne roșie, stridii, năut, semințe de dovleac. [49]</li>
                     </ul>
                 </li>
-                <li><strong>Vitamina K:</strong> "Leagă" calciul în structura osoasă. [46]
+                <li><strong><a href="https://vitmin.netlify.app/vitamina_k.html" target="_blank">Vitamina K</a>:</strong> "Leagă" <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciul</a> în structura osoasă. [46]
                     <ul>
                         <li><strong>Surse:</strong> Legume cu frunze verzi (spanac, kale, broccoli).</li>
                     </ul>
                 </li>
-                <li><strong>Vitamina C (Deficitară):</strong> Indispensabilă pentru sinteza colagenului, "schela" osului. [46]
+                <li><strong><a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">Vitamina C</a> (Deficitară):</strong> Indispensabilă pentru sinteza colagenului, "schela" osului. [46]
                     <ul>
                         <li><strong>Surse:</strong> Ardei gras roșu, kiwi, coacăze, broccoli, portocale. [50]</li>
                     </ul>
                 </li>
-                <li><strong>Potasiu (Deficitar):</strong> Neutralizează acizii din organism, prevenind "scurgerea" calciului din oase. [51]
+                <li><strong><a href="https://vitmin.netlify.app/potasiu.html" target="_blank">Potasiu</a> (Deficitar):</strong> Neutralizează acizii din organism, prevenind "scurgerea" <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciului</a> din oase. [51]
                     <ul>
                         <li><strong>Surse:</strong> Cartofi dulci, spanac, avocado, banane, somon. [52]</li>
                     </ul>
@@ -554,27 +587,27 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Zinc</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/zinc.html" target="_blank">Zinc</a></strong></td>
                         <td>Imunitate, sinteza proteinelor, vindecare, sănătate osoasă. [48, 49]</td>
                         <td>Carne de vită, semințe de dovleac, năut, nuci caju, iaurt/kefir.</td>
                     </tr>
                     <tr>
-                        <td><strong>Seleniu</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/seleniu.html" target="_blank">Seleniu</a></strong></td>
                         <td>Protecție antioxidantă, funcție tiroidiană, imunitate. [53]</td>
                         <td>Nuci braziliene (1-2/zi), ton, sardine, ouă, orez brun.</td>
                     </tr>
                     <tr>
-                        <td><strong>Potasiu</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/potasiu.html" target="_blank">Potasiu</a></strong></td>
                         <td>Echilibru electrolitic, funcție musculară și nervoasă, sănătate osoasă. [51, 52]</td>
                         <td>Cartof dulce, spanac, avocado, fasole albă, somon, banană.</td>
                     </tr>
                     <tr>
-                        <td><strong>Magneziu</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/magneziu.html" target="_blank">Magneziu</a></strong></td>
                         <td>Producția de energie (ATP), funcție musculară, activează Vit. D. [46, 47]</td>
                         <td>Semințe de dovleac, migdale, spanac, fasole neagră, avocado.</td>
                     </tr>
                     <tr>
-                        <td><strong>Cupru</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/cupru.html" target="_blank">Cupru</a></strong></td>
                         <td>Formarea globulelor roșii și a colagenului, absorbția fierului. [54]</td>
                         <td>Ficat de vită, nuci caju, semințe de floarea-soarelui, cartofi, ciuperci.</td>
                     </tr>
@@ -593,22 +626,22 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Vitamina B1 (Tiamina)</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">Vitamina B1 (Tiamina)</a></strong></td>
                         <td>Metabolismul carbohidraților (energie), funcție nervoasă. [33]</td>
                         <td>Carne de porc, semințe de floarea-soarelui, fasole neagră, linte.</td>
                     </tr>
                     <tr>
-                        <td><strong>Vitamina B2 (Riboflavina)</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">Vitamina B2 (Riboflavina)</a></strong></td>
                         <td>Producția de energie, metabolismul proteinelor. [34]</td>
                         <td>Ficat de vită, iaurt, migdale, ouă, spanac.</td>
                     </tr>
                     <tr>
-                        <td><strong>Vitamina C</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">Vitamina C</a></strong></td>
                         <td>Antioxidant, sinteza colagenului (oase, tendoane), imunitate. [46, 50]</td>
                         <td>Ardei gras roșu, kiwi, coacăze negre, broccoli, portocale.</td>
                     </tr>
                     <tr>
-                        <td><strong>Vitamina E</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/vitamina_e.html" target="_blank">Vitamina E</a></strong></td>
                         <td>Antioxidant, protejează membranele celulare de stresul oxidativ. [55]</td>
                         <td>Semințe de floarea-soarelui, migdale, ulei de germeni de grâu, avocado.</td>
                     </tr>
@@ -701,16 +734,55 @@
                 </tbody>
             </table>
         
-            <h3>Ghid pentru suplimentare strategică și prudentă</h3>
+            <h3>Protocol de echilibrare electrolitică și cu micronutrienți</h3>
             <p>Filosofia principală trebuie să fie **"alimentul pe primul loc"** ("food-first"). Totuși, în contextul unor deficiențe multiple și a unor cerințe fiziologice excepționale, suplimentarea țintită și temporară poate acționa ca o punte, accelerând procesul de recuperare. Orice supliment trebuie administrat doar la recomandarea și sub monitorizarea medicului sau a dieteticianului.[56]</p>
-            <h4>Suplimente potențial recomandate:</h4>
+            
+            <h4>Recomandări specifice</h4>
+            <p><em>Notă importantă: Acestea sunt recomandări cu scop informativ, bazate pe produsele disponibile. Alegerea finală și dozajul trebuie stabilite de un specialist.</em></p>
+            
+            <h5>1. Hidratare celulară și mineralizare (Coral Club)</h5>
             <ul>
-                <li><strong>Vitamina D3:</strong> O suplimentare este aproape întotdeauna necesară în astfel de cazuri, fiind critică pentru absorbția calciului. [43, 45]</li>
-                <li><strong>Probiotic de calitate:</strong> Poate accelera refacerea florei intestinale. Se recomandă un supliment cu tulpini multiple și un număr mare de UFC. [57]</li>
-                <li><strong>Magneziu:</strong> Formele cu biodisponibilitate bună (citrat, bisglicinat) sunt de preferat pentru a corecta rapid deficitul. [47]</li>
-                <li><strong>Complex de vitamine B:</strong> Poate ajuta la deblocarea metabolismului energetic și proteic.</li>
-                <li><strong>Pudră proteică:</strong> Un shake proteic post-antrenament este o metodă convenabilă de a atinge ținta zilnică de proteine. [58]</li>
+                <li><strong>Coral-Mine:</strong> Compoziție minerală din coral fosil de adâncime, care, adăugată în apa de băut, o îmbogățește cu minerale ionice (în special <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a> și <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>). Beneficiul principal este îmbunătățirea proprietăților apei, facilitând o hidratare mai eficientă la nivel celular și contribuind la echilibrul acido-bazic al organismului.</li>
+                <li><strong>H-500:</strong> Un antioxidant puternic care ajută la neutralizarea radicalilor liberi generați în timpul efortului fizic intens. Contribuie la creșterea rezistenței și la reducerea timpului de recuperare prin scăderea nivelului de acid lactic.</li>
+                <li><strong>Oceanmin:</strong> Conține un concentrat de peste 70 de minerale din apele oceanice de mare adâncime. Este o sursă excelentă de <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, un mineral esențial pentru funcția musculară, producția de energie și combaterea oboselii, fiind deosebit de util pentru un sportiv cu deficit confirmat.</li>
             </ul>
+
+            <h5>2. Suport cu micronutrienți și sănătate intestinală (Coral Club & FitLine)</h5>
+            <ul>
+                <li><strong>Super-Flora (Coral Club):</strong> Produs care combină probiotice (bifido- și lactobacterii) cu prebioticul inulină. Este o alegere excelentă pentru a reface microbiota intestinală, a îmbunătăți digestia și a crește absorbția nutrienților.</li>
+                <li><strong>Coral-Magnesium (Coral Club):</strong> Conținând forme cu absorbție superioară (taurat și glicinat), este ideal pentru repleția rapidă a deficitului de <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, esențial pentru funcția musculară și osoasă.</li>
+                <li><strong>Tasty B (Coral Club):</strong> Un complex de vitamine B într-o formă masticabilă, potrivită pentru copii, care poate ajuta la deblocarea căilor metabolice energetice și proteice.</li>
+                <li><strong>Zinc 25 mg & Selenium 100 mcg (Coral Club):</strong> Suplimente dedicate pentru corectarea țintită a deficitelor de <a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a> și <a href="https://vitmin.netlify.app/seleniu.html" target="_blank">seleniu</a>, respectând dozajul indicat de specialist.</li>
+                <li><strong>PowerCocktail Junior (FitLine):</strong> Este un complex special conceput pentru copii, care combină vitamine și minerale esențiale. Conține vitaminele din complexul B (inclusiv <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">B1</a> și <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">B2</a>), <a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">vitamina C</a>, <a href="https://vitmin.netlify.app/vitamina_e.html" target="_blank">vitamina E</a>, precum și minerale cheie. Conceptul NTC® (Nutrient Transport Concept) specific mărcii urmărește o biodisponibilitate crescută, fiind o opțiune bună pentru a adresa multiplele deficite identificate.</li>
+            </ul>
+            
+            <h5>3. Suport cu acizi grași Omega-3 (FitLine & Coral Club)</h5>
+            <ul>
+                <li><strong><a href="https://www.pmebusiness.com/us/shop/fitline/fitline-products/special-products/fitline-microsolve-omega-3/?TP=6289743&lang=en" target="_blank">FitLine microSolve Omega 3</a>:</strong> Acest supliment utilizează tehnologia microSolve pentru a crește biodisponibilitatea acizilor grași Omega-3 (EPA și DHA). Aceștia sunt esențiali pentru reducerea inflamației sistemice induse de efort, pentru sănătatea membranelor celulare și pentru funcția cognitivă, aspecte cruciale pentru un sportiv în creștere.</li>
+                <li><strong><a href="https://ro.coral.club/shop/o-mega-3-tg.html?offer=2191" target="_blank">O-Mega-3 TG (Coral Club)</a>:</strong> Oferă acizi grași Omega-3 în forma lor naturală de trigliceride (TG), care este recunoscută pentru o absorbție superioară. Acest produs susține sănătatea cardiovasculară, fluiditatea sângelui și flexibilitatea articulațiilor, contribuind la o recuperare mai eficientă.</li>
+            </ul>
+
+            <h5>4. Suport proteic pentru recuperare (Herbalife & FitLine)</h5>
+            <ul>
+                <li><strong><a href="https://www.herbalife.com/ro-ro/u/products/herbalife24-rebuild-strength-ciocolata-1000g-403k" target="_blank">Herbalife24 Rebuild Strength</a>:</strong> Este un shake de recuperare post-antrenament, bogat în proteine (25g per porție, din concentrat și izolat proteic din zer). Conține și aminoacizi cu catenă ramificată (BCAA), L-glutamină și un amestec de carbohidrați pentru a reface rapid rezervele de glicogen și a sprijini reconstrucția musculară.</li>
+                <li><strong><a href="https://www.fitline.com/ro/ro-ro/products/0704022?tp=6703128" target="_blank">FitLine ProShape Amino</a>:</strong> Conține un amestec de toți aminoacizii esențiali, care sunt "cărămizile" fundamentale ale proteinelor. Utilizarea acestui produs în jurul antrenamentelor poate ajuta la protejarea masei musculare (efect anti-catabolic) și la optimizarea sintezei proteice, fiind deosebit de util într-un context de metabolism proteic deficitar.</li>
+            </ul>
+
+            <h3>Dincolo de farfurie: rolul somnului și al recuperării</h3>
+            <p>Nutriția este doar unul dintre pilonii recuperării. Fără un somn adecvat, organismul nu poate valorifica nutrienții consumați. În timpul somnului profund au loc cele mai importante procese de reparație tisulară, eliberare a hormonului de creștere și consolidare osoasă. Asigurarea a 9-11 ore de somn de calitate pe noapte este la fel de importantă ca și respectarea planului alimentar. De asemenea, managementul stresului și includerea unor zile de recuperare activă sau pasivă în programul de antrenament sunt esențiale pentru a permite organismului să se refacă și să se adapteze la efort.[59]</p>
+        
+            <h2>Concluzie: o cale către sănătate durabilă și excelență atletică</h2>
+            <p>Tabloul clinic prezentat este complex și necesită o abordare serioasă, structurată și multidisciplinară. Vestea bună este că organismul unui tânăr are o capacitate remarcabilă de vindecare și adaptare. Prin implementarea unui protocol integrat, care adresează atât nevoile fizice, cât și pe cele emoționale, sub îndrumare medicală, este pe deplin posibil nu doar să se corecteze deficiențele actuale, ci și să se construiască o fundație solidă pentru o carieră sportivă lungă, sănătoasă și de succes.</p>
+            <h4>Pilonii centrali ai acestui plan de recuperare sunt:</h4>
+            <ol>
+              <li>**Alimentare adecvată:** Ieșirea din starea de deficit energetic prin atingerea unui aport caloric de 3000-3500 kcal/zi, cu o distribuție optimă a macronutrienților.</li>
+              <li>**Vindecarea intestinului:** Prioritizarea sănătății digestive prin consumul de alimente probiotice și prebiotice, pentru a debloca absorbția nutrienților.</li>
+              <li>**Reziliență emoțională:** Recunoașterea și gestionarea stresului prin comunicare deschisă, tehnici de relaxare și, dacă este necesar, suport psihologic specializat.</li>
+              <li>**Construirea matricei osoase:** Furnizarea unui aport bogat și diversificat din toți nutrienții esențiali pentru reconstrucția scheletică.</li>
+              <li>**Hidratare inteligentă:** Implementarea unui protocol riguros de hidratare cu apă și electroliți pentru a susține funcțiile metabolice.</li>
+            </ol>
+            <p>Abordarea acestei situații cu calm, rigoare și sprijinul unei echipe de specialiști va transforma această provocare într-o oportunitate de a-i oferi tânărului atlet cele mai bune instrumente nutriționale și emoționale pentru a-și atinge potențialul maxim, protejându-i în același timp cel mai de preț bun: sănătatea.</p>
+
         </div>
         
         <div id="bibliografie" class="tab-content">
@@ -782,13 +854,13 @@
                 <li>Palacios, C. (2006). The role of nutrients in bone health, from A to Z. *Critical reviews in food science and nutrition*, 46(8), 621-628.</li>
                 <li>Holick, M. F. (2007). Vitamin D deficiency. *New England journal of medicine*, 357(3), 266-281.</li>
                 <li>Wacker, M., & Holick, M. F. (2013). Sunlight and Vitamin D: A global perspective for health. *Dermato-endocrinology*, 5(1), 51-108.</li>
-                <li>Schwalfenberg, G. K. (2017). The alkaline diet: is there evidence that an alkaline pH diet benefits health?. *Journal of environmental and public health*, 2012.</li>
+                <li>Schwalfenberg, G. K., & Genuis, S. J. (2017). The Importance of Magnesium in Clinical Healthcare. *Scientifica*, 2017.</li>
                 <li>Rude, R. K., Singer, F. R., & Gruber, H. E. (2009). Skeletal and hormonal effects of magnesium deficiency. *Journal of the American College of Nutrition*, 28(2), 131-141.</li>
                 <li>Volpe, S. L. (2013). Magnesium in disease prevention and overall health. *Advances in nutrition*, 4(3), 378S-383S.</li>
                 <li>Price, C. T., Langford, J. R., & Liporace, F. A. (2012). Essential nutrients for bone health and a review of their availability in the average North American diet. *The open orthopaedics journal*, 6, 143.</li>
                 <li>Lowe, N. M., Fekete, K., & Decsi, T. (2012). Methods of assessment of zinc status in humans: a systematic review. *The American journal of clinical nutrition*, 95(6), 1491-1509.</li>
                 <li>Carr, A. C., & Maggini, S. (2017). Vitamin C and immune function. *Nutrients*, 9(11), 1211.</li>
-                <li>Tucker, K. L. (2014). Vegetarian diets and bone status. *The American journal of clinical nutrition*, 100(suppl_1), 329S-335S.</li>
+                <li>Tucker, K. L., Hannan, M. T., Chen, H., Cupples, L. A., Wilson, P. W., & Kiel, D. P. (1999). Potassium, magnesium, and fruit and vegetable intakes are associated with greater bone mineral density in elderly men and women. *The American journal of clinical nutrition*, 69(4), 727-736.</li>
                 <li>He, F. J., & MacGregor, G. A. (2008). Beneficial effects of potassium on human health. *Physiologia plantarum*, 133(4), 725-735.</li>
                 <li>Weaver, C. M. (2009). Potassium and health. *Advances in nutrition*, 3(5), 759-760.</li>
                 <li>U.S. Department of Agriculture, Agricultural Research Service. (2019). *FoodData Central*.</li>
@@ -797,119 +869,155 @@
                 <li>Prohaska, J. R. (2014). Copper and the developing and mature nervous system. *Nutritional neuroscience*, 17(5), 193-206.</li>
                 <li>Lonsdale, D. (2006). A review of the biochemistry, metabolism and clinical benefits of thiamin (e) and its derivatives. *Evidence-based complementary and alternative medicine*, 3(1), 49-59.</li>
                 <li>Thakur, K., Tomar, S. K., Singh, A. K., Mandal, S., & Arora, S. (2017). Riboflavin and health: A review of the literature. *Journal of food science*, 82(11), 2548-2557.</li>
-                <li>Traber, M. G. (2014). Vitamin E and K interactions—a 50-year-old problem. *Nutrition reviews*, 72(8), 503-516.</li>
+                <li>Traber, M. G., & Atkinson, J. (2007). Vitamin E, antioxidant and nothing more. *Free Radical Biology and Medicine*, 43(1), 4-15.</li>
                 <li>Rizvi, S., et al. (2014). The role of vitamin e in human health and some diseases. *Sultan Qaboos University Medical Journal*, 14(2), e157.</li>
                 <li>Sen, C. K., Khanna, S., & Roy, S. (2006). Tocotrienols: Vitamin E beyond tocopherols. *Life sciences*, 78(18), 2088-2098.</li>
                 <li>Institute of Medicine. (2000). *Dietary Reference Intakes for Vitamin C, Vitamin E, Selenium, and Carotenoids*. The National Academies Press.</li>
                 <li>Schneeman, B. O. (2001). Satiety and the role of dietary fiber. *Journal of the American Dietetic Association*, 101(9), 1013-1014.</li>
                 <li>Mero, A. A., et al. (2010). Effect of sport-specific training on ghrelin, leptin and adiponectin concentrations in adolescent athletes. *European journal of applied physiology*, 110(3), 633-641.</li>
-                <li>Jäger, R., et al. (2017). International Society of Sports Nutrition Position Stand: probiotics. *Journal of the International Society of Sports Nutrition*, 14(1), 21.</li>
+                <li>Jäger, R., et al. (2019). International Society of Sports Nutrition Position Stand: probiotics. *Journal of the International Society of Sports Nutrition*, 16(1), 1-21.</li>
                 <li>Sanders, M. E., et al. (2019). Probiotics and prebiotics in intestinal health and disease: from biology to the clinic. *Nature Reviews Gastroenterology & Hepatology*, 16(10), 605-616.</li>
                 <li>Watson, A. M. (2017). Sleep and athletic performance. *Current sports medicine reports*, 16(6), 413-418.</li>
             </ol>
         </div>
     </div>
-
-    <!-- Password Modal -->
     <div id="password-modal" class="modal-overlay">
         <div class="modal-content">
-            <h3>Acces restricționat</h3>
-            <p>Pentru a vizualiza acest conținut, vă rugăm introduceți parola.</p>
+            <h3>Introduceți parola pentru a continua</h3>
             <p id="password-error"></p>
             <input type="password" id="password-input" placeholder="Parola...">
-            <button id="submit-password">Confirmă</button>
+            <button id="submit-password">Deblocare</button>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabContents = document.querySelectorAll('.tab-content');
-            const modal = document.getElementById('password-modal');
-            const passwordInput = document.getElementById('password-input');
-            const submitPasswordBtn = document.getElementById('submit-password');
-            const passwordError = document.getElementById('password-error');
+        // IIFE pentru a evita poluarea scopului global
+        (function() {
+            // Regula de aur: Așteaptă ca DOM-ul să fie complet încărcat
+            document.addEventListener('DOMContentLoaded', function() {
+                // Stocarea în cache a referințelor la elementele DOM
+                const tabButtons = document.querySelectorAll('.tab-button');
+                const tabContents = document.querySelectorAll('.tab-content');
+                const modal = document.getElementById('password-modal');
+                const passwordInput = document.getElementById('password-input');
+                const submitPasswordBtn = document.getElementById('submit-password');
+                const passwordError = document.getElementById('password-error');
 
-            const correctPassword = 'parola123';
-            let isUnlocked = false;
-            let requestedTab = null;
-
-            // Initialize tabs
-            function initializeTabs() {
-                // Set first tab as active
-                tabButtons[0].classList.add('active');
-                document.getElementById(tabButtons[0].dataset.tab).classList.add('active');
-
-                // Lock protected tabs
-                tabButtons.forEach((btn, index) => {
-                    if (index > 0) {
-                        btn.classList.add('locked');
-                    }
-                });
-            }
-
-            function openTab(tabId) {
-                tabContents.forEach(content => content.classList.remove('active'));
-                tabButtons.forEach(button => button.classList.remove('active'));
-
-                document.getElementById(tabId).classList.add('active');
-                document.querySelector(`.tab-button[data-tab="${tabId}"]`).classList.add('active');
-            }
-
-            function unlockTabs() {
-                isUnlocked = true;
-                document.querySelectorAll('.tab-button.locked').forEach(btn => {
-                    btn.classList.remove('locked');
-                });
-                modal.style.display = 'none';
-                passwordInput.value = '';
-                passwordError.textContent = '';
-                if (requestedTab) {
-                    openTab(requestedTab);
-                    requestedTab = null;
+                // Programare defensivă: Verificarea existenței elementelor
+                if (!modal ||!passwordInput ||!submitPasswordBtn ||!passwordError |
+                    | tabButtons.length === 0) {
+                    console.error("Initialization failed: One or more required elements are missing from the DOM.");
+                    return; 
                 }
-            }
 
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const tabId = this.dataset.tab;
-                    if (this.classList.contains('protected') && !isUnlocked) {
-                        requestedTab = tabId;
-                        modal.style.display = 'flex';
-                        passwordInput.focus();
-                    } else {
-                        openTab(tabId);
-                    }
-                });
-            });
+                const correctPasswordHash = 'c2ff37419452a1a115858913b849b2518d64121575c872439164601673851509';
+                let isUnlocked = false;
+                let requestedTab = null;
 
-            submitPasswordBtn.addEventListener('click', function() {
-                if (passwordInput.value === correctPassword) {
-                    unlockTabs();
-                } else {
-                    passwordError.textContent = 'Parolă incorectă. Încercați din nou.';
-                    passwordInput.value = '';
-                    passwordInput.focus();
+                async function hash(string) {
+                    const utf8 = new TextEncoder().encode(string);
+                    const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
+                    const hashArray = Array.from(new Uint8Array(hashBuffer));
+                    const hashHex = hashArray
+                      .map((b) => b.toString(16).padStart(2, '0'))
+                      .join('');
+                    return hashHex;
                 }
-            });
-            
-            passwordInput.addEventListener('keyup', function(event) {
-                if (event.key === 'Enter') {
-                    submitPasswordBtn.click();
-                }
-            });
 
-            // Close modal if clicked outside of the content
-            modal.addEventListener('click', function(event) {
-                if (event.target === modal) {
+                function initializeTabs() {
+                    // FIX 2: Se aplică clasa 'active' pe PRIMUL ELEMENT (tabButtons), nu pe întreaga listă.
+                    tabButtons.classList.add('active');
+                    document.getElementById(tabButtons.dataset.tab).classList.add('active');
+
+                    tabButtons.forEach((btn, index) => {
+                        if (index > 0) {
+                            btn.classList.add('locked');
+                        }
+                    });
+                }
+
+                function openTab(tabId) {
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    tabButtons.forEach(button => button.classList.remove('active'));
+
+                    document.getElementById(tabId).classList.add('active');
+                    document.querySelector(`.tab-button[data-tab="${tabId}"]`).classList.add('active');
+                }
+
+                function unlockTabs() {
+                    isUnlocked = true;
+                    document.querySelectorAll('.tab-button.locked').forEach(btn => {
+                        btn.classList.remove('locked');
+                    });
                     modal.style.display = 'none';
-                    passwordError.textContent = '';
                     passwordInput.value = '';
+                    passwordError.textContent = '';
+                    if (requestedTab) {
+                        openTab(requestedTab);
+                        requestedTab = null;
+                    }
                 }
-            });
 
-            initializeTabs();
-        });
+                async function checkPassword() {
+                    const enteredPassword = passwordInput.value;
+                    if (!enteredPassword |
+
+| submitPasswordBtn.classList.contains('loading')) return;
+
+                    submitPasswordBtn.classList.add('loading');
+                    submitPasswordBtn.disabled = true;
+
+                    try {
+                        const enteredPasswordHash = await hash(enteredPassword);
+                        if (enteredPasswordHash === correctPasswordHash) {
+                            unlockTabs();
+                        } else {
+                            passwordError.textContent = 'Parolă incorectă. Încercați din nou.';
+                            passwordInput.value = '';
+                            passwordInput.focus();
+                        }
+                    } catch (error) {
+                        console.error("Password hashing failed:", error);
+                        passwordError.textContent = 'Eroare la verificarea parolei.';
+                    } finally {
+                        submitPasswordBtn.classList.remove('loading');
+                        submitPasswordBtn.disabled = false;
+                    }
+                }
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const tabId = this.dataset.tab;
+                        if (this.classList.contains('protected') &&!isUnlocked) {
+                            requestedTab = tabId;
+                            modal.style.display = 'flex';
+                            passwordInput.focus();
+                        } else if (!this.classList.contains('locked')) {
+                            openTab(tabId);
+                        }
+                    });
+                });
+
+                submitPasswordBtn.addEventListener('click', checkPassword);
+                
+                passwordInput.addEventListener('keyup', function(event) {
+                    passwordError.textContent = '';
+                    if (event.key === 'Enter') {
+                        submitPasswordBtn.click();
+                    }
+                });
+
+                modal.addEventListener('click', function(event) {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                        passwordError.textContent = '';
+                        passwordInput.value = '';
+                    }
+                });
+
+                initializeTabs();
+            });
+        })();
     </script>
 
 </body>
