@@ -287,10 +287,36 @@
             width: 100%;
             font-size: 16px;
             font-weight: 700;
+            position: relative;
         }
         
         .modal-content button:hover {
             background-color: var(--header-bg);
+        }
+        
+        .modal-content button.loading::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border: 4px solid transparent;
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: button-loading-spinner 1s ease infinite;
+        }
+
+        @keyframes button-loading-spinner {
+            from {
+                transform: rotate(0turn);
+            }
+            to {
+                transform: rotate(1turn);
+            }
         }
         
         #password-error {
@@ -342,8 +368,8 @@
                     <li>Urobilinogen crescut</li>
                     <li>Densitate non-minerală osoasă scăzută</li>
                     <li>Coeficient crescut de osteoporoză</li>
-                    <li>Deficit de zinc, seleniu, potasiu, magneziu, cupru</li>
-                    <li>Deficit de vitamina B1, B2, C, E</li>
+                    <li>Deficit de <a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a>, <a href="https://vitmin.netlify.app/seleniu.html" target="_blank">seleniu</a>, <a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a>, <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, <a href="https://vitmin.netlify.app/cupru.html" target="_blank">cupru</a></li>
+                    <li>Deficit de <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">vitamina B1</a>, <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">B2</a>, <a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">C</a>, <a href="https://vitmin.netlify.app/vitamina_e.html" target="_blank">E</a></li>
                     <li>Dezechilibre de aminoacizi (exces ușor de lizină, triptofan, treonină, histidină, arginină)</li>
                     <li>Semne de deshidratare și deficit de electroliți</li>
                 </ol>
@@ -385,7 +411,7 @@
                         <li>Vitaminele din complexul B (inclusiv <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">Vitamina B1</a> și <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">Vitamina B2</a>): Vitale pentru producția de energie și funcția neurologică, sunt consumate rapid în perioade de stres. [16]</li>
                         <li><a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">Vitamina C</a>: Concentrată în glandele suprarenale, este utilizată masiv pentru producția de cortizol. [16]</li>
                     </ul>
-                    Acest proces de epuizare se aliniază perfect cu deficitele de <strong>zinc, magneziu, vitamina B1, B2 și C</strong> identificate la Andi David.
+                    Acest proces de epuizare se aliniază perfect cu deficitele de <strong><a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a>, <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">vitamina B1</a>, <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">B2</a> și <a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">C</a></strong> identificate la Andi David.
                 </li>
                 <li><strong>Impactul asupra sistemului scheletic:</strong> Hormonul principal al stresului cronic, <strong>cortizolul</strong>, are un efect direct distructiv asupra oaselor. Nivelurile ridicate de cortizol:
                     <ul>
@@ -440,14 +466,14 @@
             <strong>Recomandare:</strong> Aportul caloric zilnic țintă ar trebui să fie de <strong>3000-3500 kcal</strong>, monitorizat și ajustat în funcție de evoluția greutății și a stării generale, sub îndrumarea unui specialist.</p>
         
             <h3>Protocolul de hidratare și electroliți: piatra de temelie a recuperării</h3>
-            <p>Deshidratarea și deficitul de electroliți, identificate în evaluare, sunt probleme critice pentru un sportiv. Hidratarea este adesea subestimată, însă este cel mai important nutrient pentru performanță, recuperare și funcționarea corectă a organelor interne. [26] Electroliții sunt minerale esențiale (precum sodiu, potasiu, magneziu, calciu) care se pierd prin transpirație și sunt vitale pentru funcția musculară, transmiterea nervoasă și menținerea echilibrului hidric în organism. Un deficit de electroliți poate duce la crampe musculare, oboseală și scăderea performanței.</p>
+            <p>Deshidratarea și deficitul de electroliți, identificate în evaluare, sunt probleme critice pentru un sportiv. Hidratarea este adesea subestimată, însă este cel mai important nutrient pentru performanță, recuperare și funcționarea corectă a organelor interne. [26] Electroliții sunt minerale esențiale (precum sodiu, <a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a>, <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a>) care se pierd prin transpirație și sunt vitale pentru funcția musculară, transmiterea nervoasă și menținerea echilibrului hidric în organism. Un deficit de electroliți poate duce la crampe musculare, oboseală și scăderea performanței.</p>
             <p>Unul dintre rezultatele anormale – <strong>urobilinogenul crescut</strong> – poate fi, de asemenea, direct legat de starea de hidratare. Deși poate semnala o patologie hepatică [27, 28], în contextul unui sportiv, este frecvent un indicator al <strong>hemolizei induse de efort</strong> (distrugerea globulelor roșii din cauza impactului mecanic al antrenamentului), combinată cu <strong>deshidratarea</strong>. [29] Deshidratarea concentrează urina, ceea ce face ca orice cantitate de urobilinogen să pară crescută, și, în același timp, pune un stres suplimentar pe ficat. [29, 30]</p>
             <p>Prin urmare, un protocol de hidratare riguros nu este doar o recomandare generală, ci o intervenție terapeutică directă.</p>
             <h4>Protocol de hidratare recomandat:</h4>
             <ul>
                 <li><strong>Hidratare de bază:</strong> Consumul a cel puțin <strong>2.5 - 3 litri de lichide pe zi</strong>, predominant apă plată, în afara antrenamentelor.</li>
                 <li><strong>Înainte de antrenament:</strong> 500-600 ml de apă cu 2-3 ore înainte și încă 200-300 ml cu 20 de minute înainte.</li>
-                <li><strong>În timpul antrenamentului:</strong> 150-250 ml de lichide la fiecare 15-20 de minute. Pentru antrenamentele care depășesc 60-90 de minute, este esențială o băutură sportivă care să conțină electroliți pentru a înlocui pierderile de <strong>potasiu și magneziu</strong> (ambele deficitare), precum și sodiu. [31]</li>
+                <li><strong>În timpul antrenamentului:</strong> 150-250 ml de lichide la fiecare 15-20 de minute. Pentru antrenamentele care depășesc 60-90 de minute, este esențială o băutură sportivă care să conțină electroliți pentru a înlocui pierderile de <strong><a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a> și <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a></strong> (ambele deficitare), precum și sodiu. [31]</li>
                 <li><strong>După antrenament (rehidratare):</strong> Refacerea pierderilor de lichide este critică. Se recomandă consumul a 1.5 litri de lichid pentru fiecare kilogram de greutate corporală pierdut în timpul antrenamentului. Utilizarea sărurilor de rehidratare orală (SRO) sau a unor băuturi de recuperare cu electroliți poate fi extrem de benefică. [32]</li>
                 <li><strong>Monitorizare:</strong> Culoarea urinei este un indicator simplu și eficient. O urină de culoarea paiului deschis indică o hidratare bună, în timp ce o culoare închisă, de chihlimbar, semnalează deshidratare. [30]</li>
             </ul>
@@ -459,7 +485,7 @@
         
             <h3>Corectarea metabolismului proteic și a dezechilibrului de aminoacizi</h3>
             <p>Rezultatele indică "ușoare deficiențe în metabolismul proteic" și un "exces ușor de lizină, triptofan, treonină, histidină, arginină". Aceste două constatări par contradictorii, dar, în realitate, ele dezvăluie o problemă metabolică mai profundă.</p>
-            <p>Excesul aparent al anumitor aminoacizi în sânge nu indică neapărat un consum prea mare, ci mai degrabă o <strong>incapacitate a organismului de a-i utiliza eficient</strong>. Acest blocaj metabolic poate fi cauzat de deficiența unor cofactori esențiali. Vitaminele din complexul B, în special <strong>vitamina B1 (tiamina) și vitamina B2 (riboflavina)</strong> – ambele deficitare în acest caz – sunt coenzime critice în metabolismul energetic și în cel al aminoacizilor. [33, 34] Fără ele, procesul de sinteză a noilor proteine este încetinit, iar aminoacizii rămân în circulație, creând un fals aspect de "exces".</p>
+            <p>Excesul aparent al anumitor aminoacizi în sânge nu indică neapărat un consum prea mare, ci mai degrabă o <strong>incapacitate a organismului de a-i utiliza eficient</strong>. Acest blocaj metabolic poate fi cauzat de deficiența unor cofactori esențiali. Vitaminele din complexul B, în special <strong><a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">vitamina B1</a> (tiamina) și <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">vitamina B2</a> (riboflavina)</strong> – ambele deficitare în acest caz – sunt coenzime critice în metabolismul energetic și în cel al aminoacizilor. [33, 34] Fără ele, procesul de sinteză a noilor proteine este încetinit, iar aminoacizii rămân în circulație, creând un fals aspect de "exces".</p>
             <h4>Strategie de intervenție:</h4>
             <ol>
                 <li><strong>Asigurarea aportului proteic:</strong> Respectarea țintei de 72-81 g de proteine pe zi, cu un accent pe diversitate și calitate.</li>
@@ -499,38 +525,38 @@
         
             <h3>Fereastra critică pentru masa osoasă maximă</h3>
             <p>Copilăria și adolescența reprezintă o fereastră de oportunitate unică pentru acumularea masei osoase. Capitalul osos maxim (Peak Bone Mass), atins în jurul vârstei de 20-25 de ani, determină riscul de osteoporoză la vârsta adultă. [41, 42] O densitate osoasă scăzută la 11 ani sugerează că acest proces fundamental este deja compromis.</p>
-            <p>Cauzele sunt direct legate de problemele identificate anterior: disponibilitatea energetică scăzută (organismul "canibalizează" osul pentru energie), malabsorbția nutrienților și deficiențele de cofactori (magneziu, zinc, potasiu, vitamina C, D). Tratarea sănătății osoase în izolare, prin simpla administrare de calciu, este sortită eșecului. Abordarea trebuie să fie integrată.</p>
+            <p>Cauzele sunt direct legate de problemele identificate anterior: disponibilitatea energetică scăzută (organismul "canibalizează" osul pentru energie), malabsorbția nutrienților și deficiențele de cofactori (<a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, <a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a>, <a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a>, <a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">vitamina C</a>, D). Tratarea sănătății osoase în izolare, prin simpla administrare de <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a>, este sortită eșecului. Abordarea trebuie să fie integrată.</p>
         
             <h3>Matricea nutrienților pentru construcția osoasă: o abordare sinergică</h3>
-            <p>Construirea unui os puternic necesită atât "cărămizi" (calciu), cât și o echipă de "muncitori" (ceilalți nutrienți) pentru a le asambla corect.</p>
+            <p>Construirea unui os puternic necesită atât "cărămizi" (<a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a>), cât și o echipă de "muncitori" (ceilalți nutrienți) pentru a le asambla corect.</p>
             <ul>
-                <li><strong>Calciu și Vitamina D:</strong> Duo-ul fundamental. Calciul este "cărămida", iar vitamina D este "șeful de șantier" care asigură transportul calciului. [43]
+                <li><strong><a href="https://vitmin.netlify.app/calciu.html" target="_blank">Calciu</a> și <a href="https://vitmin.netlify.app/vitamina_d.html" target="_blank">Vitamina D</a>:</strong> Duo-ul fundamental. Calciul este "cărămida", iar vitamina D este "șeful de șantier" care asigură transportul calciului. [43]
                     <ul>
-                        <li><strong>Surse de Calciu:</strong> Produse lactate, legume cu frunze verzi (broccoli, kale), tofu îmbogățit, sardine (cu oase), migdale. [41, 44]</li>
-                        <li><strong>Surse de Vitamina D:</strong> Expunerea la soare, pește gras (somon, macrou), gălbenuș de ou, alimente fortificate. [45]</li>
+                        <li><strong>Surse de <a href="https://vitmin.netlify.app/calciu.html" target="_blank">Calciu</a>:</strong> Produse lactate, legume cu frunze verzi (broccoli, kale), tofu îmbogățit, sardine (cu oase), migdale. [41, 44]</li>
+                        <li><strong>Surse de <a href="https://vitmin.netlify.app/vitamina_d.html" target="_blank">Vitamina D</a>:</strong> Expunerea la soare, pește gras (somon, macrou), gălbenuș de ou, alimente fortificate. [45]</li>
                     </ul>
                 </li>
-                <li><strong>Magneziu (Deficitar):</strong> Activează vitamina D și reglează transportul de calciu. [46]
+                <li><strong><a href="https://vitmin.netlify.app/magneziu.html" target="_blank">Magneziu</a> (Deficitar):</strong> Activează <a href="https://vitmin.netlify.app/vitamina_d.html" target="_blank">vitamina D</a> și reglează transportul de <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a>. [46]
                     <ul>
                         <li><strong>Surse:</strong> Semințe de dovleac, migdale, leguminoase, avocado, spanac. [47]</li>
                     </ul>
                 </li>
-                <li><strong>Zinc (Deficitar):</strong> Stimulează celulele formatoare de os (osteoblaste). [48]
+                <li><strong><a href="https://vitmin.netlify.app/zinc.html" target="_blank">Zinc</a> (Deficitar):</strong> Stimulează celulele formatoare de os (osteoblaste). [48]
                     <ul>
                         <li><strong>Surse:</strong> Carne roșie, stridii, năut, semințe de dovleac. [49]</li>
                     </ul>
                 </li>
-                <li><strong>Vitamina K:</strong> "Leagă" calciul în structura osoasă. [46]
+                <li><strong><a href="https://vitmin.netlify.app/vitamina_k.html" target="_blank">Vitamina K</a>:</strong> "Leagă" <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciul</a> în structura osoasă. [46]
                     <ul>
                         <li><strong>Surse:</strong> Legume cu frunze verzi (spanac, kale, broccoli).</li>
                     </ul>
                 </li>
-                <li><strong>Vitamina C (Deficitară):</strong> Indispensabilă pentru sinteza colagenului, "schela" osului. [46]
+                <li><strong><a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">Vitamina C</a> (Deficitară):</strong> Indispensabilă pentru sinteza colagenului, "schela" osului. [46]
                     <ul>
                         <li><strong>Surse:</strong> Ardei gras roșu, kiwi, coacăze, broccoli, portocale. [50]</li>
                     </ul>
                 </li>
-                <li><strong>Potasiu (Deficitar):</strong> Neutralizează acizii din organism, prevenind "scurgerea" calciului din oase. [51]
+                <li><strong><a href="https://vitmin.netlify.app/potasiu.html" target="_blank">Potasiu</a> (Deficitar):</strong> Neutralizează acizii din organism, prevenind "scurgerea" <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciului</a> din oase. [51]
                     <ul>
                         <li><strong>Surse:</strong> Cartofi dulci, spanac, avocado, banane, somon. [52]</li>
                     </ul>
@@ -554,27 +580,27 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Zinc</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/zinc.html" target="_blank">Zinc</a></strong></td>
                         <td>Imunitate, sinteza proteinelor, vindecare, sănătate osoasă. [48, 49]</td>
                         <td>Carne de vită, semințe de dovleac, năut, nuci caju, iaurt/kefir.</td>
                     </tr>
                     <tr>
-                        <td><strong>Seleniu</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/seleniu.html" target="_blank">Seleniu</a></strong></td>
                         <td>Protecție antioxidantă, funcție tiroidiană, imunitate. [53]</td>
                         <td>Nuci braziliene (1-2/zi), ton, sardine, ouă, orez brun.</td>
                     </tr>
                     <tr>
-                        <td><strong>Potasiu</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/potasiu.html" target="_blank">Potasiu</a></strong></td>
                         <td>Echilibru electrolitic, funcție musculară și nervoasă, sănătate osoasă. [51, 52]</td>
                         <td>Cartof dulce, spanac, avocado, fasole albă, somon, banană.</td>
                     </tr>
                     <tr>
-                        <td><strong>Magneziu</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/magneziu.html" target="_blank">Magneziu</a></strong></td>
                         <td>Producția de energie (ATP), funcție musculară, activează Vit. D. [46, 47]</td>
                         <td>Semințe de dovleac, migdale, spanac, fasole neagră, avocado.</td>
                     </tr>
                     <tr>
-                        <td><strong>Cupru</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/cupru.html" target="_blank">Cupru</a></strong></td>
                         <td>Formarea globulelor roșii și a colagenului, absorbția fierului. [54]</td>
                         <td>Ficat de vită, nuci caju, semințe de floarea-soarelui, cartofi, ciuperci.</td>
                     </tr>
@@ -593,22 +619,22 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Vitamina B1 (Tiamina)</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">Vitamina B1 (Tiamina)</a></strong></td>
                         <td>Metabolismul carbohidraților (energie), funcție nervoasă. [33]</td>
                         <td>Carne de porc, semințe de floarea-soarelui, fasole neagră, linte.</td>
                     </tr>
                     <tr>
-                        <td><strong>Vitamina B2 (Riboflavina)</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">Vitamina B2 (Riboflavina)</a></strong></td>
                         <td>Producția de energie, metabolismul proteinelor. [34]</td>
                         <td>Ficat de vită, iaurt, migdale, ouă, spanac.</td>
                     </tr>
                     <tr>
-                        <td><strong>Vitamina C</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">Vitamina C</a></strong></td>
                         <td>Antioxidant, sinteza colagenului (oase, tendoane), imunitate. [46, 50]</td>
                         <td>Ardei gras roșu, kiwi, coacăze negre, broccoli, portocale.</td>
                     </tr>
                     <tr>
-                        <td><strong>Vitamina E</strong></td>
+                        <td><strong><a href="https://vitmin.netlify.app/vitamina_e.html" target="_blank">Vitamina E</a></strong></td>
                         <td>Antioxidant, protejează membranele celulare de stresul oxidativ. [55]</td>
                         <td>Semințe de floarea-soarelui, migdale, ulei de germeni de grâu, avocado.</td>
                     </tr>
@@ -703,13 +729,24 @@
         
             <h3>Ghid pentru suplimentare strategică și prudentă</h3>
             <p>Filosofia principală trebuie să fie **"alimentul pe primul loc"** ("food-first"). Totuși, în contextul unor deficiențe multiple și a unor cerințe fiziologice excepționale, suplimentarea țintită și temporară poate acționa ca o punte, accelerând procesul de recuperare. Orice supliment trebuie administrat doar la recomandarea și sub monitorizarea medicului sau a dieteticianului.[56]</p>
-            <h4>Suplimente potențial recomandate:</h4>
+            <h4>Suplimente potențial recomandate (general):</h4>
             <ul>
-                <li><strong>Vitamina D3:</strong> O suplimentare este aproape întotdeauna necesară în astfel de cazuri, fiind critică pentru absorbția calciului. [43, 45]</li>
+                <li><strong><a href="https://vitmin.netlify.app/vitamina_d.html" target="_blank">Vitamina D3</a>:</strong> O suplimentare este aproape întotdeauna necesară în astfel de cazuri, fiind critică pentru absorbția <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciului</a>. [43, 45]</li>
                 <li><strong>Probiotic de calitate:</strong> Poate accelera refacerea florei intestinale. Se recomandă un supliment cu tulpini multiple și un număr mare de UFC. [57]</li>
-                <li><strong>Magneziu:</strong> Formele cu biodisponibilitate bună (citrat, bisglicinat) sunt de preferat pentru a corecta rapid deficitul. [47]</li>
-                <li><strong>Complex de vitamine B:</strong> Poate ajuta la deblocarea metabolismului energetic și proteic.</li>
+                <li><strong><a href="https://vitmin.netlify.app/magneziu.html" target="_blank">Magneziu</a>:</strong> Formele cu biodisponibilitate bună (citrat, bisglicinat) sunt de preferat pentru a corecta rapid deficitul. [47]</li>
+                <li><strong><a href="https://vitmin.netlify.app/complex_b.html" target="_blank">Complex de vitamine B</a>:</strong> Poate ajuta la deblocarea metabolismului energetic și proteic.</li>
                 <li><strong>Pudră proteică:</strong> Un shake proteic post-antrenament este o metodă convenabilă de a atinge ținta zilnică de proteine. [58]</li>
+            </ul>
+
+            <h4>Exemplu de protocol de suplimentare (bazat pe oferta Coral Club)</h4>
+            <p><em>Notă importantă: Acestea sunt exemple cu scop informativ, bazate pe produsele disponibile. Alegerea finală și dozajul trebuie stabilite de un specialist.</em></p>
+            <ul>
+                <li><strong>Hidratare și electroliți:</strong> Utilizarea produsului <strong>Coral-Mine</strong> (un plic la 1.5 litri de apă) poate contribui la mineralizarea apei și la refacerea echilibrului electrolitic, adresând deficitele de <a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a> și <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>.</li>
+                <li><strong>Sănătate intestinală:</strong> Produsul <strong>Super-Flora</strong>, care combină probiotice (bifido- și lactobacterii) cu prebioticul inulină, este o alegere excelentă pentru a reface microbiota intestinală.</li>
+                <li><strong>Deficit de Magneziu:</strong> <strong>Coral-Magnesium</strong>, conținând forme cu absorbție superioară (taurat și glicinat), este ideal pentru repleția rapidă a acestui mineral esențial.</li>
+                <li><strong>Deficit de Vitamine B:</strong> <strong>Tasty B</strong> este un complex de vitamine B într-o formă masticabilă, potrivită pentru copii, care poate ajuta la deblocarea căilor metabolice.</li>
+                <li><strong>Deficite minerale specifice:</strong> Pentru <a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a> și <a href="https://vitmin.netlify.app/seleniu.html" target="_blank">seleniu</a>, se pot utiliza produsele dedicate <strong>Zinc 25 mg</strong> și <strong>Selenium 100 mcg</strong>, respectând dozajul indicat de specialist.</li>
+                <li><strong>Vitamina D:</strong> Suplimentarea cu <strong>Vitamin D3 2000 IU</strong> este crucială pentru sănătatea osoasă.</li>
             </ul>
             
             <h3>Dincolo de farfurie: rolul somnului și al recuperării</h3>
@@ -901,7 +938,11 @@
 
             async function checkPassword() {
                 const enteredPassword = passwordInput.value;
+                if (!enteredPassword) return;
+
+                submitPasswordBtn.classList.add('loading');
                 const enteredPasswordHash = await hash(enteredPassword);
+                submitPasswordBtn.classList.remove('loading');
 
                 if (enteredPasswordHash === correctPasswordHash) {
                     unlockTabs();
