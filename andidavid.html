@@ -911,7 +911,7 @@
     <div id="password-modal" class="modal-overlay">
         <div class="modal-content">
             <h3>Acces restricționat</h3>
-            <p>Pentru a vizualiza acest conținut, vă rugăm introduceți parola.</p>
+            <p>Pentru a vizualiza acest conținut, vă rugăm introduceți parola. ATENȚIE! Acest raport este contra cost. Parola se primește după plată!</p>
             <p id="password-error"></p>
             <input type="password" id="password-input" placeholder="Parola...">
             <button id="submit-password">Confirmă</button>
@@ -973,7 +973,7 @@
                 if (passwordInput.value === correctPassword) {
                     unlockTabs();
                 } else {
-                    passwordError.textContent = 'Parolă incorectă. Încercați din nou. ATENȚIE! Acest raport este contra cost. Parola se deblochează după plată!';
+                    passwordError.textContent = 'Parolă incorectă. Încercați din nou. ';
                     passwordInput.value = '';
                     passwordInput.focus();
                 }
