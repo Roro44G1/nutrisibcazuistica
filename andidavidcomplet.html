@@ -32,7 +32,6 @@
             padding: 20px;
             line-height: 1.7;
             font-weight: 400;
-            /* Stiluri pentru a preveni selecția textului */
             -webkit-user-select: none; /* Safari */
             -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Standard syntax */
@@ -225,10 +224,12 @@
             column-gap: 40px;
         }
        .bibliography-list li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             padding-left: 35px;
             position: relative;
             text-align: left;
+            font-size: 0.9em;
+            break-inside: avoid-column;
        }
        .bibliography-list li::before {
             content: "[" counter(item) "]";
@@ -237,19 +238,6 @@
             left: 0;
             font-weight: bold;
             color: var(--primary-accent-color);
-        }
-
-        .page-footer {
-            text-align: center;
-            padding: 20px;
-            background-color: var(--container-bg-color);
-            color: var(--primary-text-color);
-            font-size: 0.85em;
-        }
-        .page-footer p {
-            text-align: center;
-            margin: 0;
-            color: var(--primary-text-color);
         }
         
         /* Password Protection Styles */
@@ -325,9 +313,21 @@
             height: 20px;
         }
 
+        .page-footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--header-bg);
+            color: #bdc3c7;
+            font-size: 0.9em;
+        }
+        .page-footer p {
+            margin: 0;
+            color: #bdc3c7;
+        }
+
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;" onkeydown="if(event.ctrlKey && (event.keyCode === 83 || event.keyCode === 85)) { return false; }">
 
     <div class="main-container">
         <header class="page-header">
@@ -339,6 +339,7 @@
             <button class="tab-button" data-tab="introducere">Introducere</button>
             <button class="tab-button protected" data-tab="riscuri">Riscuri și presiuni</button>
             <button class="tab-button protected" data-tab="perspectiva-emotionala">Perspectiva emoțională</button>
+            <button class="tab-button protected" data-tab="terapii-holistice">Terapii holistice</button>
             <button class="tab-button protected" data-tab="energie-hidratare">Energie & Hidratare</button>
             <button class="tab-button protected" data-tab="sistem-digestiv">Sistem digestiv</button>
             <button class="tab-button protected" data-tab="sistem-osos">Sistem osos</button>
@@ -352,7 +353,7 @@
             <h2>Rezumat și premisele raportului</h2>
             
             <h4>Notă preliminară și declinarea responsabilității medicale</h4>
-            <p>Acest raport a fost elaborat ca răspuns la rezultatele unei evaluări de status general și nutrițional pentru Andi David, un sportiv de performanță în vârstă de 11 ani. Documentul reprezintă o analiză de nivel expert și un set de directive nutriționale și holistice fundamentate pe informațiile furnizate. Este esențial de subliniat că acest protocol are un caracter informativ și nu substituie un consult medical direct, un diagnostic clinic sau un tratament personalizat. Recomandările din acest raport trebuie implementate exclusiv sub supravegherea unei echipe multidisciplinare, care să includă medicul pediatru al copilului, un medic specializat în medicină sportivă, un dietetician autorizat sau un nutriționist cu specializare în nutriția sportivă, și, având în vedere noile perspective adăugate, un psiholog sau psihoterapeut specializat în lucrul cu copiii și sportivii. [1] Scopul acestui document este de a oferi un cadru solid, bazat pe dovezi științifice, pentru a ghida discuțiile cu acești specialiști și pentru a construi un plan de acțiune coerent și eficient.</p>
+            <p>Acest raport a fost elaborat ca răspuns la rezultatele unei evaluări de status general și nutrițional pentru Andi David, un sportiv de performanță în vârstă de 11 ani. Documentul reprezintă o analiză de nivel expert și un set de directive nutriționale și holistice fundamentate pe informațiile furnizate. Este esențial de subliniat că acest protocol are un caracter informativ și nu substituie un consult medical direct, un diagnostic clinic sau un tratament personalizat. Recomandările din acest raport trebuie implementate exclusiv sub supravegherea unei echipe multidisciplinare, care să includă medicul pediatru al copilului, un medic specializat în medicină sportivă [4], un dietetician autorizat sau un nutriționist cu specializare în nutriția sportivă [1], și, având în vedere noile perspective adăugate, un psiholog sau psihoterapeut specializat în lucrul cu copiii și sportivii. Scopul acestui document este de a oferi un cadru solid, bazat pe dovezi științifice, pentru a ghida discuțiile cu acești specialiști și pentru a construi un plan de acțiune coerent și eficient.</p>
             
             <div class="summary-box">
                 <h4>Datele evaluării pentru Andi David</h4>
@@ -363,8 +364,6 @@
                     <li><strong>Înălțime:</strong> 160 cm</li>
                 </ul>
                 <h4>Aspecte relevante identificate în evaluare:</h4>
-                <!--<li>Deficit de <a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a>, <a href="https://vitmin.netlify.app/seleniu.html" target="_blank">seleniu</a>, <a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a>, <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, <a href="https://vitmin.netlify.app/cupru.html" target="_blank">cupru</a></li>-->
-                <!--<li>Deficit de <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">vitamina B1</a>, <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">B2</a>, <a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">C</a>, <a href="https://vitmin.netlify.app/vitamina_e.html" target="_blank">E</a></li>-->
                 <ol>
                     <li>Deficiențe ușoare în metabolismul proteic</li>
                     <li>Coeficient de absorbție colonică scăzut</li>
@@ -372,8 +371,8 @@
                     <li>Urobilinogen crescut</li>
                     <li>Densitate non-minerală osoasă scăzută</li>
                     <li>Coeficient crescut de osteoporoză</li>
-                    <li>Deficit de <a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a>, seleniu, potasiu, <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, cupru</li>
-                    <li>Deficit de <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">vitamina B1</a>, B2, C, <a href="https://vitmin.netlify.app/vitamina_e.html" target="_blank">E</a></li>
+                    <li>Deficit de <a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a>, <a href="https://vitmin.netlify.app/seleniu.html" target="_blank">seleniu</a>, <a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a>, <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, <a href="https://vitmin.netlify.app/cupru.html" target="_blank">cupru</a></li>
+                    <li>Deficit de <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">vitamina B1</a>, <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">B2</a>, <a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">C</a>, <a href="https://vitmin.netlify.app/vitamina_e.html" target="_blank">E</a></li>
                     <li>Dezechilibre de aminoacizi (exces ușor de lizină, triptofan, treonină, histidină, arginină)</li>
                     <li>Semne de deshidratare și deficit de electroliți</li>
                 </ol>
@@ -426,57 +425,101 @@
         
         <div id="perspectiva-emotionala" class="tab-content">
             <h2>Perspectiva holistică și cauzele emoționale – conexiunea minte-corp</h2>
-            <p>Pentru a înțelege pe deplin complexitatea acestui tablou clinic, este esențial să adoptăm o perspectivă holistică, care recunoaște că sănătatea fizică, emoțională, socială și cognitivă a unui copil sunt profund interconectate.[5, 6] Simptomele fizice nu sunt întotdeauna doar rezultatul unor procese biochimice izolate; ele pot fi și manifestarea fizică a unor stări emoționale și a stresului cronic.[7, 8] Această secțiune explorează cum presiunea emoțională și stresul, în special în contextul sportului de performanță, pot contribui direct la deficiențele fiziologice observate.</p>
+            <p>Pentru a înțelege pe deplin complexitatea acestui tablou clinic, este esențial să adoptăm o perspectivă holistică, care recunoaște că sănătatea fizică, emoțională, socială și cognitivă a unui copil sunt profund interconectate.[14, 88] Simptomele fizice nu sunt întotdeauna doar rezultatul unor procese biochimice izolate; ele pot fi și manifestarea fizică a unor stări emoționale și a stresului cronic.[12, 74] Această secțiune explorează cum presiunea emoțională și stresul, în special în contextul sportului de performanță, pot contribui direct la deficiențele fiziologice observate.</p>
 
             <h3>Stresul și presiunea în sportul de performanță juvenil</h3>
-            <p>Sportul de performanță, deși benefic, poate expune tinerii atleți la niveluri semnificative de presiune. Aceasta poate proveni din multiple surse: așteptări autoimpuse de a fi perfect, teama de a greși, presiunea de a performa pentru echipă, antrenori sau pentru a satisface așteptările părinților.[9, 10] Când această presiune devine cronică, riscul de <strong>epuizare (burnout)</strong> crește exponențial.[11, 12]</p>
-            <p>Simptomele de burnout la tinerii sportivi includ oboseală cronică, scăderea performanței, modificări de dispoziție (iritabilitate, tristețe), lipsă de entuziasm, tulburări de somn și îmbolnăviri frecvente.[11, 12, 13] Este frapantă suprapunerea dintre aceste semne de epuizare emoțională și tabloul clinic al copilului, sugerând că stresul ar putea fi un factor contributor major.</p>
+            <p>Sportul de performanță, deși benefic, poate expune tinerii atleți la niveluri semnificative de presiune. Aceasta poate proveni din multiple surse: așteptări autoimpuse de a fi perfect, teama de a greși, presiunea de a performa pentru echipă, antrenori sau pentru a satisface așteptările părinților.[17, 89] Când această presiune devine cronică, riscul de <strong>epuizare (burnout)</strong> crește exponențial.[11, 22]</p>
+            <p>Simptomele de burnout la tinerii sportivi includ oboseală cronică, scăderea performanței, modificări de dispoziție (iritabilitate, tristețe), lipsă de entuziasm, tulburări de somn și îmbolnăviri frecvente.[11, 22, 77] Este frapantă suprapunerea dintre aceste semne de epuizare emoțională și tabloul clinic al copilului, sugerând că stresul ar putea fi un factor contributor major.</p>
 
             <h3>Cascada fiziologică a stresului: cum emoțiile devorează corpul</h3>
-            <p>Atunci când creierul percepe o amenințare – fie ea un pericol real sau presiunea unei competiții – activează răspunsul de "luptă, fugă sau îngheț" (fight, flight, or freeze).[8] Acest mecanism de supraviețuire inundă corpul cu hormoni de stres, precum cortizolul și adrenalina.[14] În timp ce acest răspuns este util pe termen scurt, stresul cronic menține corpul într-o stare de alertă constantă, cu efecte devastatoare asupra mai multor sisteme.</p>
+            <p>Atunci când creierul percepe o amenințare – fie ea un pericol real sau presiunea unei competiții – activează răspunsul de "luptă, fugă sau îngheț" (fight, flight, or freeze).[74] Acest mecanism de supraviețuire inundă corpul cu hormoni de stres, precum cortizolul și adrenalina.[9] În timp ce acest răspuns este util pe termen scurt, stresul cronic menține corpul într-o stare de alertă constantă, cu efecte devastatoare asupra mai multor sisteme.</p>
             <ul>
-                <li><strong>Impactul asupra sistemului digestiv (axa intestin-creier):</strong> Creierul și intestinul sunt într-o comunicare constantă printr-o rețea complexă de nervi și hormoni, cunoscută ca axa intestin-creier.[15, 16] Stresul cronic perturbă grav această comunicare.[17] În starea de "luptă sau fugă", corpul deviază sângele de la organele digestive către mușchi, considerând digestia o funcție non-esențială pentru supraviețuirea imediată.[18] Acest proces:
+                <li><strong>Impactul asupra sistemului digestiv (axa intestin-creier):</strong> Creierul și intestinul sunt într-o comunicare constantă printr-o rețea complexă de nervi și hormoni, cunoscută ca axa intestin-creier.[13, 50] Stresul cronic perturbă grav această comunicare.[33] În starea de "luptă sau fugă", corpul deviază sângele de la organele digestive către mușchi, considerând digestia o funcție non-esențială pentru supraviețuirea imediată.[76] Acest proces:
                     <ul>
-                        <li><strong>Încetinește digestia și alterează secrețiile gastrice</strong>, ceea ce duce la o descompunere ineficientă a alimentelor și la o absorbție redusă a nutrienților.[18, 19] Aceasta este o explicație directă pentru "coeficientul de absorbție colonică scăzut".</li>
-                        <li><strong>Afectează negativ microbiomul intestinal</strong>, ducând la un dezechilibru între bacteriile bune și cele rele.[20, 21] Acest fenomen poate explica "coeficientul scăzut de bacterii intestinale".</li>
+                        <li><strong>Încetinește digestia și alterează secrețiile gastrice</strong>, ceea ce duce la o descompunere ineficientă a alimentelor și la o absorbție redusă a nutrienților.[32, 76] Aceasta este o explicație directă pentru "coeficientul de absorbție colonică scăzut".</li>
+                        <li><strong>Afectează negativ microbiomul intestinal</strong>, ducând la un dezechilibru între bacteriile bune și cele rele.[3, 44] Acest fenomen poate explica "coeficientul scăzut de bacterii intestinale".</li>
                     </ul>
                 </li>
                 <li><strong>Epuizarea nutrienților esențiali:</strong> Pentru a produce hormoni de stres și a menține corpul în alertă, organismul consumă cantități mari de vitamine și minerale. Stresul cronic este un "hoț" de nutrienți, epuizând în mod specific rezervele de:
                     <ul>
-                        <li><a href="https://vitmin.netlify.app/magneziu.html" target="_blank">Magneziu</a>: Esențial pentru relaxarea musculară și funcția nervoasă. Stresul crește excreția de magneziu.[22, 23]</li>
-                        <li><a href="https://vitmin.netlify.app/zinc.html" target="_blank">Zinc</a>: Crucial pentru imunitate și reglarea cortizolului. Nivelurile de zinc și cortizol au o relație inversă.[23, 24]</li>
-                        <li>Vitaminele din complexul B (inclusiv <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">Vitamina B1</a> și <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">Vitamina B2</a>): Vitale pentru producția de energie și funcția neurologică, sunt consumate rapid în perioade de stres.[19, 23]</li>
-                        <li><a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">Vitamina C</a>: Concentrată în glandele suprarenale, este utilizată masiv pentru producția de cortizol.[23]</li>
+                        <li><a href="https://vitmin.netlify.app/magneziu.html" target="_blank">Magneziu</a>: Esențial pentru relaxarea musculară și funcția nervoasă. Stresul crește excreția de magneziu.[58, 79]</li>
+                        <li><a href="https://vitmin.netlify.app/zinc.html" target="_blank">Zinc</a>: Crucial pentru imunitate și reglarea cortizolului. Nivelurile de zinc și cortizol au o relație inversă.[66, 79]</li>
+                        <li>Vitaminele din complexul B (inclusiv <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">Vitamina B1</a> și <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">Vitamina B2</a>): Vitale pentru producția de energie și funcția neurologică, sunt consumate rapid în perioade de stres.[32, 79]</li>
+                        <li><a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">Vitamina C</a>: Concentrată în glandele suprarenale, este utilizată masiv pentru producția de cortizol.[79]</li>
                     </ul>
                     Acest proces de epuizare se aliniază perfect cu deficitele de <strong><a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a>, <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">vitamina B1</a>, <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">B2</a> și <a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">C</a></strong> identificate în analizele copilului.
                 </li>
                 <li><strong>Impactul asupra sistemului scheletic:</strong> Hormonul principal al stresului cronic, <strong>cortizolul</strong>, are un efect direct distructiv asupra oaselor. Nivelurile ridicate de cortizol:
                     <ul>
-                        <li><strong>Blochează absorbția calciului</strong> în intestin.[25, 26]</li>
-                        <li><strong>Stimulează resorbția osoasă</strong>, adică descompunerea țesutului osos pentru a elibera aminoacizi, pe care corpul îi folosește ca sursă de energie de urgență.[26, 27]</li>
-                        <li><strong>Reduce factorii de creștere osoasă</strong> și crește moartea celulelor formatoare de os (osteoblaste).[27]</li>
+                        <li><strong>Blochează absorbția calciului</strong> în intestin.[6, 8]</li>
+                        <li><strong>Stimulează resorbția osoasă</strong>, adică descompunerea țesutului osos pentru a elibera aminoacizi, pe care corpul îi folosește ca sursă de energie de urgență.[6, 86]</li>
+                        <li><strong>Reduce factorii de creștere osoasă</strong> și crește moartea celulelor formatoare de os (osteoblaste).[86]</li>
                     </ul>
-                    Această legătură directă între stresul cronic și metabolismul osos oferă o explicație plauzibilă pentru "densitatea non-minerală scăzută" și "coeficientul crescut de osteoporoză", fenomene extrem de neobișnuite la un copil de 11 ani.[28, 29]
+                    Această legătură directă între stresul cronic și metabolismul osos oferă o explicație plauzibilă pentru "densitatea non-minerală scăzută" și "coeficientul crescut de osteoporoză", fenomene extrem de neobișnuite la un copil de 11 ani.[18, 29]
                 </li>
             </ul>
         
             <h3>Când corpul spune nu: costul stresului ascuns</h3>
-            <p>Medicul și autorul Gabor Maté, în lucrarea sa "Când corpul spune nu", argumentează că bolile cronice pot fi adesea modul în care corpul exprimă fizic o suferință emoțională pe care mintea nu o poate sau nu vrea să o recunoască.[30, 31, 32] Din această perspectivă, simptomele copilului nu sunt doar o listă de probleme tehnice, ci pot fi considerate un mesaj. Corpul său ar putea "spune nu" la un nivel de presiune, la un program de antrenament sau la un stres emoțional care a devenit nesustenabil.</p>
+            <p>Medicul și autorul Gabor Maté, în lucrarea sa "Când corpul spune nu", argumentează că bolile cronice pot fi adesea modul în care corpul exprimă fizic o suferință emoțională pe care mintea nu o poate sau nu vrea să o recunoască.[48, 49, 10] Din această perspectivă, simptomele copilului nu sunt doar o listă de probleme tehnice, ci pot fi considerate un mesaj. Corpul său ar putea "spune nu" la un nivel de presiune, la un program de antrenament sau la un stres emoțional care a devenit nesustenabil.</p>
 
             <h3>Strategii de acțiune pentru reziliență emoțională</h3>
             <p>Abordarea cauzelor emoționale este la fel de importantă ca și protocolul nutrițional. Aceste recomandări nu înlocuiesc consultul unui specialist în sănătate mintală, ci oferă un cadru de sprijin pentru părinți și antrenori.</p>
             <ol>
-                <li><strong>Comunicare și sprijin necondiționat:</strong> Creați un spațiu sigur în care copilul să poată vorbi despre gândurile și sentimentele sale fără teama de a fi judecat.[9] Mutați focusul de la rezultate și câștig la efort, progres și bucuria de a practica sportul.[9, 10]</li>
+                <li><strong>Comunicare și sprijin necondiționat:</strong> Creați un spațiu sigur în care copilul să poată vorbi despre gândurile și sentimentele sale fără teama de a fi judecat.[65] Mutați focusul de la rezultate și câștig la efort, progres și bucuria de a practica sportul.[17, 65]</li>
                 <li><strong>Tehnici de relaxare și conectare minte-corp:</strong> Integrați în rutina zilnică practici simple de management al stresului.
                     <ul>
-                        <li><strong>Respirație conștientă:</strong> Exerciții simple de respirație profundă pot calma instantaneu sistemul nervos.[7]</li>
-                        <li><strong>Stretching și yoga:</strong> Aceste activități ajută la eliberarea tensiunii musculare acumulate și la creșterea conștientizării corporale.[33]</li>
+                        <li><strong>Respirație conștientă:</strong> Exerciții simple de respirație profundă pot calma instantaneu sistemul nervos.[12]</li>
+                        <li><strong>Stretching și yoga:</strong> Aceste activități ajută la eliberarea tensiunii musculare acumulate și la creșterea conștientizării corporale.[15]</li>
                     </ul>
                 </li>
-                <li><strong>Prioritizarea somnului și a recuperării:</strong> Somnul este esențial pentru recuperarea fizică și emoțională. Asigurați o rutină de somn constantă și un mediu propice odihnei.[6, 9]</li>
-                <li><strong>Joc nestructurat și deconectare:</strong> Este vital ca viața copilului să nu se rezume doar la sport. Timpul pentru joc liber, creativ și nestructurat este fundamental pentru dezvoltarea sa și pentru eliberarea stresului.[34]</li>
-                <li><strong>Căutarea ajutorului specializat:</strong> Colaborarea cu un psiholog sportiv sau un terapeut poate oferi copilului instrumente valoroase pentru a gestiona presiunea, a-și construi reziliența și a naviga provocările sportului de performanță.[13, 14] A recunoaște nevoia de ajutor este un semn de putere, nu de slăbiciune.[9]</li>
+                <li><strong>Prioritizarea somnului și a recuperării:</strong> Somnul este esențial pentru recuperarea fizică și emoțională. Asigurați o rutină de somn constantă și un mediu propice odihnei.[62, 65]</li>
+                <li><strong>Joc nestructurat și deconectare:</strong> Este vital ca viața copilului să nu se rezume doar la sport. Timpul pentru joc liber, creativ și nestructurat este fundamental pentru dezvoltarea sa și pentru eliberarea stresului.[20]</li>
+                <li><strong>Căutarea ajutorului specializat:</strong> Colaborarea cu un psiholog sportiv sau un terapeut poate oferi copilului instrumente valoroase pentru a gestiona presiunea, a-și construi reziliența și a naviga provocările sportului de performanță.[69, 70] A recunoaște nevoia de ajutor este un semn de putere, nu de slăbiciune.[65]</li>
             </ol>
+        </div>
+        
+        <div id="terapii-holistice" class="tab-content">
+            <h2>Abordări holistice complementare pentru recuperare și echilibru</h2>
+            <p><i>Notă importantă: Terapiile prezentate în această secțiune sunt considerate complementare și nu trebuie să înlocuiască niciodată protocolul medical și nutrițional de bază. Integrarea lor se va face doar cu acordul medicului curant și sub îndrumarea unor practicieni certificați.</i></p>
+
+            <h3>Abordarea ayurvedică: echilibrarea focului digestiv și a vitalității</h3>
+            <p>Din perspectiva medicinei ayurvedice, tabloul clinic al lui Andi sugerează un dezechilibru al dosha-urilor (energiile fundamentale) și o slăbire a focului digestiv, numit <strong>Agni</strong>. Efortul fizic intens este asociat cu energia <strong>Pitta</strong> (foc și apă), iar stresul și epuizarea cu <strong>Vata</strong> (aer și eter). Un exces de Pitta neechilibrat poate "arde" resursele, în timp ce un Vata agravat duce la uscăciune, slăbiciune osoasă și probleme digestive.[16, 42]</p>
+            <ul>
+                <li><strong>Pacificarea Pitta și Vata:</strong> Dieta trebuie să fie calmantă, hrănitoare și ușor de digerat. Se recomandă alimente gătite, calde, cu gusturi dulce, amar și astringent. Evitarea alimentelor picante, acide, prăjite și a celor reci este esențială.</li>
+                <li><strong>Întărirea Agni (focul digestiv):</strong> Consumul de ceai de ghimbir înainte de mese, utilizarea condimentelor digestive precum chimenul, coriandrul și feniculul, și respectarea unui program regulat de mese pot ajuta la refacerea capacității digestive.</li>
+                <li><strong>Reconstruirea Ojas (vitalitatea):</strong> Ojas este esența vitală a tuturor țesuturilor. Pentru a o reface, se recomandă alimente precum ghee (unt clarifiat), lapte cald cu mirodenii (cardamom, scorțișoară), migdale înmuiate și curmale. Plante adaptogene precum <strong>Ashwagandha</strong> pot fi de ajutor, dar doar la recomandarea unui specialist ayurvedic.[16]</li>
+            </ul>
+
+            <h3>Medicina tradițională chineză (MTC): tonifierea splinei și a rinichilor</h3>
+            <p>În MTC, sănătatea depinde de fluxul armonios al energiei vitale (<strong>Qi</strong>) prin canalele energetice numite meridiane. Simptomele lui Andi indică un deficit major la nivelul a două sisteme de organe:</p>
+            <ul>
+                <li><strong>Deficit de Qi al Splinei:</strong> Splina, în MTC, este responsabilă cu transformarea alimentelor în Qi și Sânge și cu menținerea masei musculare. O splină slăbită duce la digestie proastă, absorbție deficitară, oboseală și slăbiciune musculară.</li>
+                <li><strong>Deficit de Esență a Rinichilor:</strong> Rinichii stochează Esența (Jing), care este baza creșterii, dezvoltării și sănătății oaselor. Epuizarea prin efort excesiv și stres consumă această esență, ducând la probleme osoase și o vitalitate scăzută.</li>
+                <li><strong>Stagnarea Qi-ului Ficatului:</strong> Presiunea emoțională și frustrarea pot bloca fluxul liber al Qi-ului în meridianul Ficatului, ceea ce agravează problemele digestive și poate duce la iritabilitate.</li>
+            </ul>
+            <p><strong>Terapii MTC recomandate:</strong></p>
+            <ul>
+                <li><strong>Acupunctura/Presopunctura:</strong> Stimularea unor puncte specifice poate tonifia energia organelor deficitare și poate debloca stagnările. Puncte cheie ar fi: <strong>Stomac 36 (Zusanli)</strong> pentru digestie și vitalitate generală, <strong>Splină 6 (Sanyinjiao)</strong> pentru a hrăni Sângele și a calma mintea, și <strong>Rinichi 3 (Taixi)</strong> pentru a tonifia Esența Rinichilor.[11]</li>
+                <li><strong>Dietoterapie chineză:</strong> Consumul de alimente care tonifică Splina (cartofi dulci, dovleac, orez, ovăz) și Rinichii (fasole neagră, nuci, semințe de susan negru).</li>
+            </ul>
+
+            <h3>Tehnici de meditație și echilibrare energetică (Chakre)</h3>
+            <p>Stresul și presiunea performanței creează un dezechilibru în sistemul energetic al corpului. Meditația și conștientizarea centrilor energetici (chakre) pot ajuta la restabilirea armoniei interioare.</p>
+            <ul>
+                <li><strong>Chakrele afectate:</strong>
+                    <ul>
+                        <li><strong>Muladhara (Chakra Rădăcinii):</strong> Localizată la baza coloanei, este asociată cu sentimentul de siguranță, stabilitate și sănătatea fizică (oase, picioare). Dezechilibrul se manifestă prin insecuritate și probleme scheletice.</li>
+                        <li><strong>Manipura (Chakra Plexului Solar):</strong> Localizată în zona stomacului, guvernează puterea personală, stima de sine și sistemul digestiv. Presiunea de a performa și eșecurile pot bloca această chakră, ducând la probleme digestive și lipsă de încredere.</li>
+                    </ul>
+                </li>
+                <li><strong>Tehnici recomandate:</strong>
+                    <ul>
+                        <li><strong>Meditația de împământare (Grounding):</strong> Exerciții simple de vizualizare în care copilul își imaginează rădăcini care cresc din tălpile picioarelor adânc în pământ, oferindu-i stabilitate și siguranță. Aceasta ajută la echilibrarea chakrei rădăcinii.[2]</li>
+                        <li><strong>Respirația abdominală:</strong> Plasarea mâinilor pe abdomen și observarea mișcării de ridicare și coborâre în timpul respirației aduce energia și conștientizarea în zona plexului solar, calmând sistemul nervos și ajutând digestia.[9]</li>
+                        <li><strong>Vizualizarea culorilor:</strong> Asocierea culorii roșii cu chakra rădăcinii și a culorii galbene cu plexul solar în timpul unor meditații scurte poate ajuta la revitalizarea acestor centri energetici.</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
         
         <div id="energie-hidratare" class="tab-content">
@@ -485,7 +528,7 @@
         
             <h3>Calcularea necesarului caloric pentru antrenamente intense</h3>
             <p>Datele antropometrice (11 ani, 160 cm, 45 kg) și nivelul de activitate fizică (2-3 ore de antrenament pe zi) plasează copilul într-o categorie cu cerințe energetice foarte ridicate. Tabelele standard indică un necesar de aproximativ 2700 kcal/zi pentru un băiat activ de această vârstă.[35] Totuși, acest nivel este adesea insuficient pentru sportivii de performanță.</p>
-            <p>Pentru o estimare mai precisă, se poate utiliza ecuația Mifflin-St Jeor pentru a calcula Rata Metabolică Bazală (BMR) – energia consumată în repaus.[36]</p>
+            <p>Pentru o estimare mai precisă, se poate utiliza ecuația Mifflin-St Jeor pentru a calcula Rata Metabolică Bazală (BMR) – energia consumată în repaus.[52]</p>
             <ul>
                 <li><strong>Calcul BMR:</strong><br>
                     $BMR = (10 \times greutate_{kg}) + (6.25 \times inaltime_{cm}) - (5 \times varsta_{ani}) + 5$<br>
@@ -498,21 +541,21 @@
                     $TDEE = BMR \times Factor_{activitate} = 1400 \times (1.7 \text{ la } 1.9) = 2380 - 2660$ kcal/zi
                 </li>
             </ul>
-            <p>Această valoare de 2400-2700 kcal/zi reprezintă minimul necesar doar pentru a menține greutatea actuală. Prezența multiplilor deficite nutriționale, a problemelor de metabolism proteic și, mai ales, a semnelor de demineralizare osoasă, indică în mod clar că organismul nu primește suficientă energie pentru a acoperi simultan costurile antrenamentului și procesele fundamentale de creștere și reparație. Această stare este cunoscută ca <strong>Disponibilitate Energetică Scăzută (Low Energy Availability - LEA)</strong>. În starea de LEA, organismul intră într-un mod de conservare, sacrificând funcții pe termen lung, precum construirea oaselor și sinteza musculară, pentru a supraviețui pe termen scurt.[37]</p>
+            <p>Această valoare de 2400-2700 kcal/zi reprezintă minimul necesar doar pentru a menține greutatea actuală. Prezența multiplilor deficite nutriționale, a problemelor de metabolism proteic și, mai ales, a semnelor de demineralizare osoasă, indică în mod clar că organismul nu primește suficientă energie pentru a acoperi simultan costurile antrenamentului și procesele fundamentale de creștere și reparație. Această stare este cunoscută ca <strong>Disponibilitate Energetică Scăzută (Low Energy Availability - LEA)</strong>. În starea de LEA, organismul intră într-un mod de conservare, sacrificând funcții pe termen lung, precum construirea oaselor și sinteza musculară, pentru a supraviețui pe termen scurt.[54]</p>
             <p>Prin urmare, obiectivul caloric trebuie să depășească simpla menținere. Pentru a inversa starea catabolică (de descompunere) și a susține refacerea țesuturilor și recuperarea deficitelor, este necesar un surplus caloric.<br>
             <strong>Recomandare:</strong> Aportul caloric zilnic țintă ar trebui să fie de <strong>3000-3500 kcal</strong>, monitorizat și ajustat în funcție de evoluția greutății și a stării generale, sub îndrumarea unui specialist.</p>
         
             <h3>Protocolul de hidratare și electroliți: piatra de temelie a recuperării</h3>
-            <p>Deshidratarea și deficitul de electroliți, identificate în evaluare, sunt probleme critice pentru un sportiv. Hidratarea este adesea subestimată, însă este cel mai important nutrient pentru performanță, recuperare și funcționarea corectă a organelor interne. [26] Electroliții sunt minerale esențiale (precum sodiu, <a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a>, <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a>) care se pierd prin transpirație și sunt vitale pentru funcția musculară, transmiterea nervoasă și menținerea echilibrului hidric în organism. Un deficit de electroliți poate duce la crampe musculare, oboseală și scăderea performanței.</p>
-            <p>Unul dintre rezultatele anormale – <strong>urobilinogenul crescut</strong> – poate fi, de asemenea, direct legat de starea de hidratare. Deși poate semnala o patologie hepatică [27, 28], în contextul unui sportiv, este frecvent un indicator al <strong>hemolizei induse de efort</strong> (distrugerea globulelor roșii din cauza impactului mecanic al antrenamentului), combinată cu <strong>deshidratarea</strong>. [29] Deshidratarea concentrează urina, ceea ce face ca orice cantitate de urobilinogen să pară crescută, și, în același timp, pune un stres suplimentar pe ficat. [29, 30]</p>
+            <p>Deshidratarea și deficitul de electroliți, identificate în evaluare, sunt probleme critice pentru un sportiv. Hidratarea este adesea subestimată, însă este cel mai important nutrient pentru performanță, recuperare și funcționarea corectă a organelor interne. [75] Electroliții sunt minerale esențiale (precum sodiu, <a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a>, <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a>) care se pierd prin transpirație și sunt vitale pentru funcția musculară, transmiterea nervoasă și menținerea echilibrului hidric în organism. Un deficit de electroliți poate duce la crampe musculare, oboseală și scăderea performanței.</p>
+            <p>Unul dintre rezultatele anormale – <strong>urobilinogenul crescut</strong> – poate fi, de asemenea, direct legat de starea de hidratare. Deși poate semnala o patologie hepatică [16, 70], în contextul unui sportiv, este frecvent un indicator al <strong>hemolizei induse de efort</strong> (distrugerea globulelor roșii din cauza impactului mecanic al antrenamentului), combinată cu <strong>deshidratarea</strong>. [78] Deshidratarea concentrează urina, ceea ce face ca orice cantitate de urobilinogen să pară crescută, și, în același timp, pune un stres suplimentar pe ficat. [2, 78]</p>
             <p>Prin urmare, un protocol de hidratare riguros nu este doar o recomandare generală, ci o intervenție terapeutică directă.</p>
             <h4>Protocol de hidratare recomandat:</h4>
             <ul>
                 <li><strong>Hidratare de bază:</strong> Consumul a cel puțin <strong>2.5 - 3 litri de lichide pe zi</strong>, predominant apă plată, în afara antrenamentelor.</li>
                 <li><strong>Înainte de antrenament:</strong> 500-600 ml de apă cu 2-3 ore înainte și încă 200-300 ml cu 20 de minute înainte.</li>
-                <li><strong>În timpul antrenamentului:</strong> 150-250 ml de lichide la fiecare 15-20 de minute. Pentru antrenamentele care depășesc 60-90 de minute, este esențială o băutură sportivă care să conțină electroliți pentru a înlocui pierderile de <strong><a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a> și <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a></strong> (ambele deficitare), precum și sodiu. [31]</li>
-                <li><strong>După antrenament (rehidratare):</strong> Refacerea pierderilor de lichide este critică. Se recomandă consumul a 1.5 litri de lichid pentru fiecare kilogram de greutate corporală pierdut în timpul antrenamentului. Utilizarea sărurilor de rehidratare orală (SRO) sau a unor băuturi de recuperare cu electroliți poate fi extrem de benefică. [32]</li>
-                <li><strong>Monitorizare:</strong> Culoarea urinei este un indicator simplu și eficient. O urină de culoarea paiului deschis indică o hidratare bună, în timp ce o culoare închisă, de chihlimbar, semnalează deshidratare. [30]</li>
+                <li><strong>În timpul antrenamentului:</strong> 150-250 ml de lichide la fiecare 15-20 de minute. Pentru antrenamentele care depășesc 60-90 de minute, este esențială o băutură sportivă care să conțină electroliți pentru a înlocui pierderile de <strong><a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a> și <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a></strong> (ambele deficitare), precum și sodiu. [51]</li>
+                <li><strong>După antrenament (rehidratare):</strong> Refacerea pierderilor de lichide este critică. Se recomandă consumul a 1.5 litri de lichid pentru fiecare kilogram de greutate corporală pierdut în timpul antrenamentului. Utilizarea sărurilor de rehidratare orală (SRO) sau a unor băuturi de recuperare cu electroliți poate fi extrem de benefică. [47]</li>
+                <li><strong>Monitorizare:</strong> Culoarea urinei este un indicator simplu și eficient. O urină de culoarea paiului deschis indică o hidratare bună, în timp ce o culoare închisă, de chihlimbar, semnalează deshidratare. [2]</li>
             </ul>
         </div>
 
@@ -522,7 +565,7 @@
         
             <h3>Corectarea metabolismului proteic și a dezechilibrului de aminoacizi</h3>
             <p>Rezultatele indică "ușoare deficiențe în metabolismul proteic" și un "exces ușor de lizină, triptofan, treonină, histidină, arginină". Aceste două constatări par contradictorii, dar, în realitate, ele dezvăluie o problemă metabolică mai profundă.</p>
-            <p>Excesul aparent al anumitor aminoacizi în sânge nu indică neapărat un consum prea mare, ci mai degrabă o <strong>incapacitate a organismului de a-i utiliza eficient</strong>. Acest blocaj metabolic, sau "ambuteiaj", poate fi cauzat de deficiența unor cofactori esențiali. Vitaminele din complexul B, în special <strong><a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">vitamina B1</a> (tiamina) și <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">vitamina B2</a> (riboflavina)</strong> – ambele deficitare în acest caz – sunt coenzime critice în metabolismul energetic și în cel al aminoacizilor. [33, 34] Fără ele, procesul de sinteză a noilor proteine este încetinit, iar aminoacizii rămân în circulație, creând un fals aspect de "exces".</p>
+            <p>Excesul aparent al anumitor aminoacizi în sânge nu indică neapărat un consum prea mare, ci mai degrabă o <strong>incapacitate a organismului de a-i utiliza eficient</strong>. Acest blocaj metabolic, sau "ambuteiaj", poate fi cauzat de deficiența unor cofactori esențiali. Vitaminele din complexul B, în special <strong><a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">vitamina B1</a> (tiamina) și <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">vitamina B2</a> (riboflavina)</strong> – ambele deficitare în acest caz – sunt coenzime critice în metabolismul energetic și în cel al aminoacizilor. [45, 64] Fără ele, procesul de sinteză a noilor proteine este încetinit, iar aminoacizii rămân în circulație, creând un fals aspect de "exces".</p>
             <h4>Strategie de intervenție:</h4>
             <ol>
                 <li><strong>Asigurarea aportului proteic:</strong> Respectarea țintei de 72-81 g de proteine pe zi, cu un accent pe diversitate și calitate.</li>
@@ -532,28 +575,28 @@
                         <li><strong>Pește:</strong> Somon, ton, sardine, cod – oferă și acizi grași omega-3 benefici.</li>
                         <li><strong>Ouă:</strong> Considerate un aliment complet, o sursă excelentă de proteine.</li>
                         <li><strong>Lactate:</strong> Iaurt grecesc, brânză de vaci (cottage), kefir – oferă și calciu și probiotice.</li>
-                        <li><strong>Surse vegetale (complementare):</strong> Linte, năut, quinoa, tofu, fasole. [35]</li>
+                        <li><strong>Surse vegetale (complementare):</strong> Linte, năut, quinoa, tofu, fasole. [82]</li>
                     </ul>
                 </li>
                 <li><strong>Corectarea deficitelor de vitamine B:</strong> Urmarea recomandărilor din tabelele de repleție pentru a reface stocurile de B1 și B2.</li>
             </ol>
         
             <h3>Planul de revitalizare a sănătății intestinale: probiotice și prebiotice</h3>
-            <p>Rezultatele care arată un "coeficient de absorbție colonică scăzut" și un "coeficient scăzut de bacterii intestinale" sunt, probabil, piesa centrală a acestui puzzle. Un intestin cu o floră bacteriană (microbiotă) sărăcită este incapabil să extragă nutrienții vitali din alimente. [36] Stresul fizic intens este un factor cunoscut care poate afecta negativ microbiota. [37]</p>
+            <p>Rezultatele care arată un "coeficient de absorbție colonică scăzut" și un "coeficient scăzut de bacterii intestinale" sunt, probabil, piesa centrală a acestui puzzle. Un intestin cu o floră bacteriană (microbiotă) sărăcită este incapabil să extragă nutrienții vitali din alimente. [81] Stresul fizic intens este un factor cunoscut care poate afecta negativ microbiota. [10]</p>
             <p>Prin urmare, refacerea sănătății intestinale este prioritatea absolută. Strategia este una duală:</p>
             <ul>
-                <li><strong>Probiotice (repopularea microbiotei):</strong> Sunt microorganisme vii care aduc beneficii sănătății. Scopul este de a reintroduce în intestin tulpini benefice, precum <i>Lactobacillus</i> și <i>Bifidobacterium</i>. [38]
+                <li><strong>Probiotice (repopularea microbiotei):</strong> Sunt microorganisme vii care aduc beneficii sănătății. Scopul este de a reintroduce în intestin tulpini benefice, precum <i>Lactobacillus</i> și <i>Bifidobacterium</i>. [26]
                     <ul>
-                        <li><strong>Surse alimentare:</strong> Iaurt și chefir (naturale, neîndulcite), varză murată (nepasteurizată), castraveți murați în saramură (nu în oțet), miso, kombucha. [39]</li>
+                        <li><strong>Surse alimentare:</strong> Iaurt și chefir (naturale, neîndulcite), varză murată (nepasteurizată), castraveți murați în saramură (nu în oțet), miso, kombucha. [46]</li>
                     </ul>
                 </li>
                 <li><strong>Prebiotice (hrănirea bacteriilor bune):</strong> Sunt tipuri de fibre care servesc drept hrană pentru bacteriile intestinale benefice.
                     <ul>
-                        <li><strong>Surse alimentare:</strong> Usturoi, ceapă, praz, sparanghel, banane (mai puțin coapte), mere, cereale integrale (ovăz, orz), leguminoase (fasole, linte). [38]</li>
+                        <li><strong>Surse alimentare:</strong> Usturoi, ceapă, praz, sparanghel, banane (mai puțin coapte), mere, cereale integrale (ovăz, orz), leguminoase (fasole, linte). [73]</li>
                     </ul>
                 </li>
             </ul>
-            <p>Prin combinarea zilnică a alimentelor probiotice și prebiotice, se creează un mediu intestinal propice pentru refacerea florei și creșterea capacității de absorbție a nutrienților. [40]</p>
+            <p>Prin combinarea zilnică a alimentelor probiotice și prebiotice, se creează un mediu intestinal propice pentru refacerea florei și creșterea capacității de absorbție a nutrienților. [73]</p>
         </div>
         
         <div id="sistem-osos" class="tab-content">
@@ -561,41 +604,41 @@
             <p>Constatările privind "densitatea non-minerală scăzută" și un "coeficient crescut de osteoporoză" sunt extrem de importante și necesită o intervenție imediată. Apariția acestor markeri la un copil de 11 ani este un semnal de alarmă, indicând un dezechilibru sever între formarea și resorbția osoasă.</p>
         
             <h3>Fereastra critică pentru masa osoasă maximă</h3>
-            <p>Copilăria și adolescența reprezintă o fereastră de oportunitate unică și limitată în timp pentru acumularea masei osoase. Capitalul osos maxim (Peak Bone Mass), atins în jurul vârstei de 20-25 de ani, determină riscul de osteoporoză la vârsta adultă. [41, 42] O densitate osoasă scăzută la 11 ani sugerează că acest proces fundamental este deja compromis.</p>
+            <p>Copilăria și adolescența reprezintă o fereastră de oportunitate unică și limitată în timp pentru acumularea masei osoase. Capitalul osos maxim (Peak Bone Mass), atins în jurul vârstei de 20-25 de ani, determină riscul de osteoporoză la vârsta adultă. [68, 79] O densitate osoasă scăzută la 11 ani sugerează că acest proces fundamental este deja compromis.</p>
             <p>Cauzele sunt direct legate de problemele identificate anterior: disponibilitatea energetică scăzută (organismul "canibalizează" osul pentru energie), malabsorbția nutrienților și deficiențele de cofactori (<a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, <a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a>, <a href="https://vitmin.netlify.app/potasiu.html" target="_blank">potasiu</a>, <a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">vitamina C</a>, D). Tratarea sănătății osoase în izolare, prin simpla administrare de <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a>, este sortită eșecului. Abordarea trebuie să fie integrată.</p>
         
             <h3>Matricea nutrienților pentru construcția osoasă: o abordare sinergică</h3>
             <p>Construirea unui os puternic necesită atât "cărămizi" (<a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a>), cât și o echipă de "muncitori" (ceilalți nutrienți) pentru a le asambla corect.</p>
             <ul>
-                <li><strong><a href="https://vitmin.netlify.app/calciu.html" target="_blank">Calciu</a> și <a href="https://vitmin.netlify.app/vitamina_d.html" target="_blank">Vitamina D</a>:</strong> Duo-ul fundamental. Calciul este "cărămida", iar vitamina D este "șeful de șantier" care asigură transportul calciului. [43]
+                <li><strong><a href="https://vitmin.netlify.app/calciu.html" target="_blank">Calciu</a> și <a href="https://vitmin.netlify.app/vitamina_d.html" target="_blank">Vitamina D</a>:</strong> Duo-ul fundamental. Calciul este "cărămida", iar vitamina D este "șeful de șantier" care asigură transportul calciului. [24]
                     <ul>
-                        <li><strong>Surse de <a href="https://vitmin.netlify.app/calciu.html" target="_blank">Calciu</a>:</strong> Produse lactate, legume cu frunze verzi (broccoli, kale), tofu îmbogățit, sardine (cu oase), migdale. [41, 44]</li>
-                        <li><strong>Surse de <a href="https://vitmin.netlify.app/vitamina_d.html" target="_blank">Vitamina D</a>:</strong> Expunerea la soare, pește gras (somon, macrou), gălbenuș de ou, alimente fortificate. [45]</li>
+                        <li><strong>Surse de <a href="https://vitmin.netlify.app/calciu.html" target="_blank">Calciu</a>:</strong> Produse lactate, legume cu frunze verzi (broccoli, kale), tofu îmbogățit, sardine (cu oase), migdale. [85, 24]</li>
+                        <li><strong>Surse de <a href="https://vitmin.netlify.app/vitamina_d.html" target="_blank">Vitamina D</a>:</strong> Expunerea la soare, pește gras (somon, macrou), gălbenuș de ou, alimente fortificate. [27]</li>
                     </ul>
                 </li>
-                <li><strong><a href="https://vitmin.netlify.app/magneziu.html" target="_blank">Magneziu</a> (Deficitar):</strong> Activează <a href="https://vitmin.netlify.app/vitamina_d.html" target="_blank">vitamina D</a> și reglează transportul de <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a>. [46]
+                <li><strong><a href="https://vitmin.netlify.app/magneziu.html" target="_blank">Magneziu</a> (Deficitar):</strong> Activează <a href="https://vitmin.netlify.app/vitamina_d.html" target="_blank">vitamina D</a> și reglează transportul de <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciu</a>. [60]
                     <ul>
-                        <li><strong>Surse:</strong> Semințe de dovleac, migdale, leguminoase, avocado, spanac. [47]</li>
+                        <li><strong>Surse:</strong> Semințe de dovleac, migdale, leguminoase, avocado, spanac. [83]</li>
                     </ul>
                 </li>
-                <li><strong><a href="https://vitmin.netlify.app/zinc.html" target="_blank">Zinc</a> (Deficitar):</strong> Stimulează celulele formatoare de os (osteoblaste). [48]
+                <li><strong><a href="https://vitmin.netlify.app/zinc.html" target="_blank">Zinc</a> (Deficitar):</strong> Stimulează celulele formatoare de os (osteoblaste). [66]
                     <ul>
-                        <li><strong>Surse:</strong> Carne roșie, stridii, năut, semințe de dovleac. [49]</li>
+                        <li><strong>Surse:</strong> Carne roșie, stridii, năut, semințe de dovleac. [43]</li>
                     </ul>
                 </li>
-                <li><strong><a href="https://vitmin.netlify.app/vitamina_k.html" target="_blank">Vitamina K</a>:</strong> "Leagă" <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciul</a> în structura osoasă. [46]
+                <li><strong><a href="https://vitmin.netlify.app/vitamina_k.html" target="_blank">Vitamina K</a>:</strong> "Leagă" <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciul</a> în structura osoasă. [60]
                     <ul>
                         <li><strong>Surse:</strong> Legume cu frunze verzi (spanac, kale, broccoli).</li>
                     </ul>
                 </li>
-                <li><strong><a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">Vitamina C</a> (Deficitară):</strong> Indispensabilă pentru sinteza colagenului, "schela" osului. [46]
+                <li><strong><a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">Vitamina C</a> (Deficitară):</strong> Indispensabilă pentru sinteza colagenului, "schela" osului. [60]
                     <ul>
-                        <li><strong>Surse:</strong> Ardei gras roșu, kiwi, coacăze, broccoli, portocale. [50]</li>
+                        <li><strong>Surse:</strong> Ardei gras roșu, kiwi, coacăze, broccoli, portocale. [7]</li>
                     </ul>
                 </li>
-                <li><strong><a href="https://vitmin.netlify.app/potasiu.html" target="_blank">Potasiu</a> (Deficitar):</strong> Neutralizează acizii din organism, prevenind "scurgerea" <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciului</a> din oase. [51]
+                <li><strong><a href="https://vitmin.netlify.app/potasiu.html" target="_blank">Potasiu</a> (Deficitar):</strong> Neutralizează acizii din organism, prevenind "scurgerea" <a href="https://vitmin.netlify.app/calciu.html" target="_blank">calciului</a> din oase. [84]
                     <ul>
-                        <li><strong>Surse:</strong> Cartofi dulci, spanac, avocado, banane, somon. [52]</li>
+                        <li><strong>Surse:</strong> Cartofi dulci, spanac, avocado, banane, somon. [87]</li>
                     </ul>
                 </li>
             </ul>
@@ -618,27 +661,27 @@
                 <tbody>
                     <tr>
                         <td><strong><a href="https://vitmin.netlify.app/zinc.html" target="_blank">Zinc</a></strong></td>
-                        <td>Imunitate, sinteza proteinelor, vindecare, sănătate osoasă. [48, 49]</td>
+                        <td>Imunitate, sinteza proteinelor, vindecare, sănătate osoasă. [66, 43]</td>
                         <td>Carne de vită, semințe de dovleac, năut, nuci caju, iaurt/kefir.</td>
                     </tr>
                     <tr>
                         <td><strong><a href="https://vitmin.netlify.app/seleniu.html" target="_blank">Seleniu</a></strong></td>
-                        <td>Protecție antioxidantă, funcție tiroidiană, imunitate. [53]</td>
+                        <td>Protecție antioxidantă, funcție tiroidiană, imunitate. [67]</td>
                         <td>Nuci braziliene (1-2/zi), ton, sardine, ouă, orez brun.</td>
                     </tr>
                     <tr>
                         <td><strong><a href="https://vitmin.netlify.app/potasiu.html" target="_blank">Potasiu</a></strong></td>
-                        <td>Echilibru electrolitic, funcție musculară și nervoasă, sănătate osoasă. [51, 52]</td>
+                        <td>Echilibru electrolitic, funcție musculară și nervoasă, sănătate osoasă. [84, 87]</td>
                         <td>Cartof dulce, spanac, avocado, fasole albă, somon, banană.</td>
                     </tr>
                     <tr>
                         <td><strong><a href="https://vitmin.netlify.app/magneziu.html" target="_blank">Magneziu</a></strong></td>
-                        <td>Producția de energie (ATP), funcție musculară, activează Vit. D. [46, 47]</td>
+                        <td>Producția de energie (ATP), funcție musculară, activează Vit. D. [60, 83]</td>
                         <td>Semințe de dovleac, migdale, spanac, fasole neagră, avocado.</td>
                     </tr>
                     <tr>
                         <td><strong><a href="https://vitmin.netlify.app/cupru.html" target="_blank">Cupru</a></strong></td>
-                        <td>Formarea globulelor roșii și a colagenului, absorbția fierului. [54]</td>
+                        <td>Formarea globulelor roșii și a colagenului, absorbția fierului. [65]</td>
                         <td>Ficat de vită, nuci caju, semințe de floarea-soarelui, cartofi, ciuperci.</td>
                     </tr>
                 </tbody>
@@ -657,22 +700,22 @@
                 <tbody>
                     <tr>
                         <td><strong><a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">Vitamina B1 (Tiamina)</a></strong></td>
-                        <td>Metabolismul carbohidraților (energie), funcție nervoasă. [33]</td>
+                        <td>Metabolismul carbohidraților (energie), funcție nervoasă. [45]</td>
                         <td>Carne de porc, semințe de floarea-soarelui, fasole neagră, linte.</td>
                     </tr>
                     <tr>
                         <td><strong><a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">Vitamina B2 (Riboflavina)</a></strong></td>
-                        <td>Producția de energie, metabolismul proteinelor. [34]</td>
+                        <td>Producția de energie, metabolismul proteinelor. [64]</td>
                         <td>Ficat de vită, iaurt, migdale, ouă, spanac.</td>
                     </tr>
                     <tr>
                         <td><strong><a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">Vitamina C</a></strong></td>
-                        <td>Antioxidant, sinteza colagenului (oase, tendoane), imunitate. [46, 50]</td>
+                        <td>Antioxidant, sinteza colagenului (oase, tendoane), imunitate. [60, 7]</td>
                         <td>Ardei gras roșu, kiwi, coacăze negre, broccoli, portocale.</td>
                     </tr>
                     <tr>
                         <td><strong><a href="https://vitmin.netlify.app/vitamina_e.html" target="_blank">Vitamina E</a></strong></td>
-                        <td>Antioxidant, protejează membranele celulare de stresul oxidativ. [55]</td>
+                        <td>Antioxidant, protejează membranele celulare de stresul oxidativ. [72]</td>
                         <td>Semințe de floarea-soarelui, migdale, ulei de germeni de grâu, avocado.</td>
                     </tr>
                 </tbody>
@@ -775,7 +818,7 @@
                 <li><strong><a href="https://ro.coral.club/shop/super-flora.html" target="_blank"> Super-Flora:</a> </strong> Produs care combină probiotice (bifido- și lactobacterii) cu prebioticul inulină. Este o alegere excelentă pentru a reface microbiota intestinală, a îmbunătăți digestia și a crește absorbția nutrienților.</li>
                 <li><strong><a href="https://ro.coral.club/shop/coral-magnesium.html?app_redirect=y"  target="_blank"> Coral-Magnesium:</a></strong> Conținând forme cu absorbție superioară (taurat și glicinat), este ideal pentru repleția rapidă a deficitului de <a href="https://vitmin.netlify.app/magneziu.html" target="_blank">magneziu</a>, esențial pentru funcția musculară și osoasă.</li>
                 <li><strong><a href="https://ro.coral.club/shop/tasty-b.html" target="_blank"> Tasty B:</a></strong> Un complex de vitamine B într-o formă masticabilă, potrivită pentru copii, care poate ajuta la deblocarea căilor metabolice energetice și proteice.</li>
-                <li><strong><a href="https://ro.coral.club/shop/zinc-methionine-15-mg.html?app_redirect=y" target="_blank">Zinc 25 mg </a> și <a href="https://ro.coral.club/shop/selenium.html?app_redirect=y"target="_blank"> Selenium 100 mcg:</a></strong> Suplimente dedicate pentru corectarea țintită a deficitelor de <a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a> și <a href="https://vitmin.netlify.app/seleniu.html" target="_blank">seleniu</a>, respectând dozajul indicat de specialist.</li>
+                <li><strong><a href="https://ro.coral.club/shop/zinc-methionine-15-mg.html?app_redirect=y"target="_blank"> Zinc 25 mg</a> și <a href="https://ro.coral.club/shop/selenium.html?app_redirect=y"target="_blank"> Selenium 100 mcg:</a></strong> Suplimente dedicate pentru corectarea țintită a deficitelor de <a href="https://vitmin.netlify.app/zinc.html" target="_blank">zinc</a> și <a href="https://vitmin.netlify.app/seleniu.html" target="_blank">seleniu</a>, respectând dozajul indicat de specialist.</li>
                 <li><strong><a href="https://www.fitline.com/ro/ro-ro/products/0705068" target="_blank">PowerCocktail Junior:</a></strong> Este un complex special conceput pentru copii, care combină vitamine și minerale esențiale. Conține vitaminele din complexul B (inclusiv <a href="https://vitmin.netlify.app/vitamina_b1.html" target="_blank">B1</a> și <a href="https://vitmin.netlify.app/vitamina_b2.html" target="_blank">B2</a>), <a href="https://vitmin.netlify.app/vitamina_c.html" target="_blank">vitamina C</a>, <a href="https://vitmin.netlify.app/vitamina_e.html" target="_blank">vitamina E</a>, precum și minerale cheie. Conceptul NTC® (Nutrient Transport Concept) specific mărcii urmărește o biodisponibilitate crescută, fiind o opțiune bună pentru a adresa multiplele deficite identificate.</li>
             </ul>
             
@@ -904,16 +947,17 @@
                 <li>Watson, A. M. (2017). Sleep and athletic performance. *Current sports medicine reports*, 16(6), 413-418.</li>
             </ol>
         </div>
+
         <footer class="page-footer">
             <p>Copyright &copy; 2025 - dr.ing. Radu Pascu</p>
         </footer>
     </div>
 
-     <!-- Password Modal -->
+    <!-- Password Modal -->
     <div id="password-modal" class="modal-overlay">
         <div class="modal-content">
             <h3>Acces restricționat</h3>
-            <p>Pentru a vizualiza acest conținut, vă rugăm introduceți parola. ATENȚIE! Acest raport este contra cost. Parola se primește după plată!</p>
+            <p>Pentru a vizualiza acest conținut, vă rugăm introduceți parola.</p>
             <p id="password-error"></p>
             <input type="password" id="password-input" placeholder="Parola...">
             <button id="submit-password">Confirmă</button>
@@ -933,8 +977,8 @@
                 console.error("Initialization failed: One or more required elements are missing from the DOM.");
                 return; 
             }
-            <!-- Password encription H256  const correctPassword = '26edf789H25#7890675hgab3ef344h6kj90g2facde436hfe32190h';-->
-            const correctPassword = '123';
+
+            const correctPassword = 'Andi2025';
             let isUnlocked = false;
             let requestedTab = null;
 
@@ -975,7 +1019,7 @@
                 if (passwordInput.value === correctPassword) {
                     unlockTabs();
                 } else {
-                    passwordError.textContent = 'Parolă incorectă. Încercați din nou. ';
+                    passwordError.textContent = 'Parolă incorectă. Încercați din nou.';
                     passwordInput.value = '';
                     passwordInput.focus();
                 }
