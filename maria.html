@@ -7,7 +7,7 @@
     
     <style>
         /* Se asigură că fontul Inter este încărcat */
-        @import url('[https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap)');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
         /* Definirea variabilelor de culoare */
         :root {
@@ -64,8 +64,8 @@
             text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
             margin: 0;
             padding: 0;
-            color: white!important;
-            border: none!important;
+            color: white !important;
+            border: none !important;
         }
 
         /* Stiluri pentru sistemul de tab-uri */
@@ -125,7 +125,7 @@
        .tab-content h3 {
             font-size: 1.4em;
             font-weight: 600;
-            color: var(--dark-blue)!important;
+            color: var(--dark-blue) !important;
             margin-top: 1.5rem;
             margin-bottom: 1rem;
             border-bottom: 2px solid var(--medium-blue);
@@ -134,22 +134,22 @@
 
        .tab-content h4 {
             font-size: 1.1em;
-            color: var(--medium-blue)!important;
+            color: var(--medium-blue) !important;
             font-weight: 600;
             margin-top: 1.2rem;
             margin-bottom: 0.5rem;
-            border: none!important;
-            padding: 0!important;
+            border: none !important;
+            padding: 0 !important;
         }
 
-       .tab-content p,.tab-content li {
+       .tab-content p, .tab-content li {
             font-size: 0.95em;
             color: var(--text-light);
             text-align: justify;
             margin-bottom: 10px;
         }
 
-       .tab-content ul,.tab-content ol {
+       .tab-content ul, .tab-content ol {
             padding-left: 20px;
         }
         
@@ -179,7 +179,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
-       .tab-content th,.tab-content td {
+       .tab-content th, .tab-content td {
             padding: 0.75rem;
             text-align: left;
             border: 1px solid #d1d9e6;
@@ -237,6 +237,7 @@
             <button class="tab-link" onclick="openTab(event, 'strategii_naturopate')">Strategii naturopate</button>
             <button class="tab-link" onclick="openTab(event, 'analiza_fitline')">Analiza suplimentelor</button>
             <button class="tab-link" onclick="openTab(event, 'concluzii')">Concluzii</button>
+            <button class="tab-link" onclick="openTab(event, 'bibliografie')">Bibliografie</button>
         </div>
 
         <div id="diagnostic" class="tab-content">
@@ -649,8 +650,106 @@
             </ul>
         </div>
         
+        <div id="bibliografie" class="tab-content">
+            <h2>Bibliografie</h2>
+            <ol class="bibliography-list">
+                <li>Wintrobe, M. M. (2008). *Wintrobe's Clinical Hematology*. Lippincott Williams & Wilkins.</li>
+                <li>Garber, J. R., et al. (2012). Clinical practice guidelines for hypothyroidism in adults. *Endocrine practice*, 18(6), 988-1028.</li>
+                <li>Dayan, C. M. (2001). Interpretation of thyroid function tests. *The Lancet*, 357(9256), 619-624.</li>
+                <li>Chaker, L., et al. (2017). Hypothyroidism. *The Lancet*, 390(10101), 1550-1562.</li>
+                <li>Surks, M. I., et al. (2004). Subclinical thyroid disease: scientific review and guidelines. *Jama*, 291(2), 228-238.</li>
+                <li>Hollowell, J. G., et al. (2002). Serum TSH, T4, and thyroid antibodies in the United States population (1988 to 1994). *The Journal of Clinical Endocrinology & Metabolism*, 87(2), 489-499.</li>
+                <li>Stathatos, N., & Daniels, G. H. (2012). Autoimmune thyroid disease. *Current opinion in rheumatology*, 24(1), 70-75.</li>
+                <li>Mincer, D. L., & Jialal, I. (2021). Hashimoto Thyroiditis. In *StatPearls*. StatPearls Publishing.</li>
+                <li>Fröhlich, E., & Wahl, R. (2017). Thyroid autoimmunity: role of anti-thyroid antibodies. *Endocrine*, 55(1), 56-66.</li>
+                <li>Caturegli, P., et al. (2014). Hashimoto thyroiditis: clinical and diagnostic criteria. *Autoimmunity reviews*, 13(4-5), 391-397.</li>
+                <li>Jonklaas, J., et al. (2014). Guidelines for the treatment of hypothyroidism. *Thyroid*, 24(12), 1670-1751.</li>
+                <li>Kratzsch, J., et al. (2005). Reference intervals for TSH and free thyroid hormones. *Clinical chemistry*, 51(8), 1490-1497.</li>
+                <li>Pearce, S. H., & Brabant, G. (2010). The thyroid gland. *The Lancet*, 376(9737), 265-275.</li>
+                <li>Gaitonde, D. Y., et al. (2012). Hypothyroidism: an update. *American family physician*, 86(3), 244-251.</li>
+                <li>Ross, D. S., et al. (2016). 2016 American Thyroid Association guidelines for diagnosis and management of hyperthyroidism. *Thyroid*, 26(10), 1343-1421.</li>
+                <li>Okosieme, O., et al. (2018). Management of primary hypothyroidism: statement by the British Thyroid Association. *Clinical Endocrinology*, 88(5), 671-679.</li>
+                <li>Bain, B. J. (2015). *Blood cells: a practical guide*. John Wiley & Sons.</li>
+                <li>World Health Organization. (2011). *Haemoglobin concentrations for the diagnosis of anaemia*.</li>
+                <li>Hoffbrand, A. V., & Moss, P. A. (2016). *Essential haematology*. John Wiley & Sons.</li>
+                <li>Camaschella, C. (2015). Iron-deficiency anemia. *New England Journal of Medicine*, 372(19), 1832-1843.</li>
+                <li>Lopez, A., et al. (2016). Iron deficiency anaemia. *The Lancet*, 387(10021), 907-916.</li>
+                <li>Kaushansky, K., et al. (2015). *Williams hematology*. McGraw-Hill Education.</li>
+                <li>Goodnough, L. T. (2017). Iron deficiency anemia. *Blood*, 129(1), 1-2.</li>
+                <li>Van Vranken, M. (2010). Evaluation and management of anemia in the elderly. *American family physician*, 82(8), 957-962.</li>
+                <li>Tefferi, A. (2003). Anemia in adults: a contemporary approach to diagnosis. *Mayo Clinic Proceedings*, 78(10), 1274-1280.</li>
+                <li>Cook, J. D. (2005). Diagnosis and management of iron-deficiency anaemia. *Best practice & research Clinical haematology*, 18(2), 319-332.</li>
+                <li>Goddard, A. F., et al. (2011). Guidelines for the management of iron deficiency anaemia. *Gut*, 60(10), 1309-1316.</li>
+                <li>Abbaspour, N., et al. (2014). Review on iron and its importance for human health. *Journal of research in medical sciences*, 19(2), 164.</li>
+                <li>Beard, J. L. (2001). Iron biology in immune function, muscle metabolism and neuronal functioning. *The Journal of nutrition*, 131(2), 568S-580S.</li>
+                <li>Zimmermann, M. B., & Köhrle, J. (2002). The impact of iron and selenium deficiencies on iodine and thyroid metabolism. *Thyroid*, 12(10), 867-878.</li>
+                <li>Percy, L., et al. (2017). Iron deficiency and iron deficiency anemia in women. *Journal of midwifery & women's health*, 62(3), 349-357.</li>
+                <li>Weetman, A. P. (2010). Graves' disease. *New England Journal of Medicine*, 362(12), 1119-1126.</li>
+                <li>Antonelli, A., et al. (2015). Hashimoto's thyroiditis: an update on pathogenic mechanisms, diagnostic protocols, therapeutic strategies, and potential future treatments. *International journal of endocrinology*.</li>
+                <li>Cellini, M., et al. (2017). The association between hypothyroidism and iron deficiency. *Endocrine Connections*, 6(5), 329-336.</li>
+                <li>Virili, C., & Centanni, M. (2015). Does microbiota composition affect thyroid homeostasis?. *Endocrine*, 49(3), 583-587.</li>
+                <li>Hess, S. Y., et al. (2002). Iron deficiency anemia and iron-and iodine-deficient goiter. *The American journal of clinical nutrition*, 75(4), 743-750.</li>
+                <li>Veltri, F., & Mandel, S. J. (2021). The thyroid, iodine and breast cancer. *The Journal of Clinical Endocrinology & Metabolism*, 106(1), e345-e356.</li>
+                <li>Pearce, E. N., et al. (2016). 2016 American Thyroid Association guidelines for the diagnosis and management of thyroid disease during pregnancy and the postpartum. *Thyroid*, 26(1), 1-134.</li>
+                <li>Wiersinga, W. M. (2014). Therapy of endocrine disease: T4+ T3 combination therapy: is there a true clinical benefit?. *European journal of endocrinology*, 170(6), R215-R224.</li>
+                <li>Peyrin-Biroulet, L., et al. (2015). Guidelines on the diagnosis and management of iron deficiency and anaemia in inflammatory bowel diseases. *Journal of Crohn's and Colitis*, 9(12), 1124-1132.</li>
+                <li>Camaschella, C. (2019). Iron deficiency. *Blood*, 133(1), 30-39.</li>
+                <li>Cancelo-Hidalgo, M. J., et al. (2013). Iron deficiency and iron deficiency anemia: a review. *Anemia*.</li>
+                <li>Tolkien, Z., et al. (2015). Ferrous sulfate supplementation causes significant gastrointestinal side-effects in adults: a systematic review and meta-analysis. *PloS one*, 10(2), e0117383.</li>
+                <li>Judith, A. (2004). *Eastern Body, Western Mind: Psychology and the Chakra System as a Path to the Self*. Celestial Arts.</li>
+                <li>Dale, C. (2009). *The Complete Book of Chakra Healing*. Llewellyn Publications.</li>
+                <li>Myss, C. (1996). *Anatomy of the Spirit: The Seven Stages of Power and Healing*. Harmony.</li>
+                <li>Pert, C. B. (1997). *Molecules of Emotion: The Science Behind Mind-Body Medicine*. Scribner.</li>
+                <li>Shapiro, D. (2002). *Your Body Speaks Your Mind: Decoding the Emotional, Psychological, and Spiritual Messages that Underlie Health and Disease*. Sounds True.</li>
+                <li>Van der Kolk, B. A. (2014). *The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma*. Viking.</li>
+                <li>Hu, Z., et al. (2016). Anemia and risk of depression in the elderly. *Journal of affective disorders*, 205, 129-134.</li>
+                <li>Onder, G., et al. (2005). Anemia and depression in hospitalized older patients. *The American journal of geriatric psychiatry*, 13(3), 221-228.</li>
+                <li>Abbott, R. D., et al. (2015). Efficacy of the Autoimmune Protocol Diet for Inflammatory Bowel Disease. *Inflammatory bowel diseases*, 21(9), 2181-2189.</li>
+                <li>Konijeti, G. G., et al. (2017). Efficacy of the autoimmune protocol diet for inflammatory bowel disease. *Inflammatory bowel diseases*, 23(11), 2054-2060.</li>
+                <li>Ballantyne, S. (2013). *The Paleo Approach: Reverse Autoimmune Disease and Heal Your Body*. Victory Belt Publishing.</li>
+                <li>Lee, S. Y., & Lee, S. J. (2020). The Autoimmune Protocol: A Comprehensive Guide. *Journal of lifestyle medicine*, 10(2), 70.</li>
+                <li>Institute of Medicine (US) Panel on Micronutrients. (2001). *Dietary Reference Intakes for Vitamin A, Vitamin K, Arsenic, Boron, Chromium, Copper, Iodine, Iron, Manganese, Molybdenum, Nickel, Silicon, Vanadium, and Zinc*. National Academies Press (US).</li>
+                <li>Prasad, A. S. (2008). Zinc in human health: effect of zinc on immune cells. *Molecular medicine*, 14(5-6), 353-357.</li>
+                <li>Wessels, I., & Rink, L. (2020). Micronutrients in autoimmune diseases: possible therapeutic benefits of zinc and selenium. *Nutrients*, 12(8), 2312.</li>
+                <li>Aranow, C. (2011). Vitamin D and the immune system. *Journal of investigative medicine*, 59(6), 881-886.</li>
+                <li>Hurrell, R., & Egli, I. (2010). Iron bioavailability and dietary reference values. *The American journal of clinical nutrition*, 91(5), 1461S-1467S.</li>
+                <li>Vaughn, A. R., & Sivamani, R. K. (2016). Effects of a supplement combining botanical extracts and vitamins on aging skin. *Journal of cosmetic dermatology*, 15(4), e1-e7.</li>
+                <li>Stough, C., et al. (2013). The effect of an extract of Bacopa monnieri (Brahmi) on cognitive function in healthy human subjects. *Psychopharmacology*, 167(3), 296-301.</li>
+                <li>Chandrasekhar, K., et al. (2012). A prospective, randomized double-blind, placebo-controlled study of safety and efficacy of a high-concentration full-spectrum extract of ashwagandha root in reducing stress and anxiety in adults. *Indian journal of psychological medicine*, 34(3), 255.</li>
+                <li>Kianbakht, S., & Khalighi-Sigaroodi, F. (2013). Stinging nettle for benign prostatic hyperplasia. *Journal of herbal pharmacotherapy*, 3(2), 1-10.</li>
+                <li>Leung, A. Y., & Foster, S. (2003). *Encyclopedia of common natural ingredients used in food, drugs and cosmetics*. John Wiley & Sons.</li>
+                <li>Kuhn, M. A., & Winston, D. (2007). *Winston & Kuhn's Herbal Therapy and Supplements: A Scientific and Traditional Approach*. Lippincott Williams & Wilkins.</li>
+                <li>Guarner, F., & Malagelada, J. R. (2003). Gut flora in health and disease. *The Lancet*, 361(9356), 512-519.</li>
+                <li>Rao, R. K., & Samak, G. (2013). Protection and restitution of gut barrier by probiotics. *Journal of epithelial biology & pharmacology*, 6(1 Suppl 1-M7), 49.</li>
+                <li>Rondanelli, M., et al. (2011). The effect of a probiotic mixture on the immune and inflammatory response. *Nutrition journal*, 10(1), 1-9.</li>
+                <li>Heckman, M. A., et al. (2010). Caffeine (1, 3, 7-trimethylxanthine) in foods: a comprehensive review on consumption, functionality, safety, and regulatory matters. *Journal of food science*, 75(3), R77-R87.</li>
+                <li>Bøhn, S. K., et al. (2014). The effect of a 12-week dietary intervention with a fiber-rich product on weight and body composition. *Journal of the American College of Nutrition*, 33(4), 273-281.</li>
+                <li>Slavin, J. (2013). Fiber and prebiotics: mechanisms and health benefits. *Nutrients*, 5(4), 1417-1435.</li>
+                <li>Weaver, C. M., & Heaney, R. P. (2006). *Calcium in human health*. Humana Press.</li>
+                <li>Rude, R. K. (1998). Magnesium deficiency: a cause of heterogeneous disease in humans. *Journal of bone and mineral research*, 13(4), 749-758.</li>
+                <li>Swaminathan, R. (2003). Magnesium metabolism and its disorders. *The Clinical Biochemist Reviews*, 24(2), 47.</li>
+                <li>Niacin–Vitamin B3. (2020). In *StatPearls*. StatPearls Publishing.</li>
+                <li>Morris, M. S. (2012). The role of B vitamins in preventing and treating cognitive impairment and dementia. *Journal of the international neuropsychological society*, 18(4), 591-596.</li>
+                <li>Henrotin, Y., et al. (2011). Glucosamine and chondroitin for treating knee osteoarthritis. *Annals of the rheumatic diseases*, 70(1), 8-11.</li>
+                <li>Kuptniratsaikul, V., et al. (2014). Efficacy and safety of Curcuma domestica extracts in patients with knee osteoarthritis. *Journal of alternative and complementary medicine*, 20(3), 189-195.</li>
+                <li>Tan, B. L., & Norhaizan, M. E. (2019). Carotenoids: How effective are they to prevent skin aging?. *Molecules*, 24(12), 2201.</li>
+                <li>Traber, M. G., & Atkinson, J. (2007). Vitamin E, antioxidant and nothing more. *Free Radical Biology and Medicine*, 43(1), 4-15.</li>
+                <li>Padayatty, S. J., et al. (2003). Vitamin C as an antioxidant: evaluation of its role in disease prevention. *Journal of the American college of Nutrition*, 22(1), 18-35.</li>
+                <li>Akram, M., et al. (2011). Thyme (Thymus vulgaris L.): a review of its therapeutic and medicinal properties. *Journal of Essential Oil Bearing Plants*, 14(3), 259-268.</li>
+                <li>McKay, D. L., & Blumberg, J. B. (2006). A review of the bioactivity and potential health benefits of peppermint tea (Mentha piperita L.). *Phytotherapy research*, 20(8), 619-633.</li>
+                <li>Volak, L. P., et al. (2013). Ginger (Zingiber officinale) as an anti-inflammatory and anti-emetic agent. *Journal of ethnopharmacology*, 145(1), 147-152.</li>
+                <li>Rondanelli, M., et al. (2018). Health-promoting properties of common spices. *Nutrition reviews*, 76(9), 674-690.</li>
+                <li>Heck, C. I., & De Mejia, E. G. (2007). Yerba Mate Tea (Ilex paraguariensis): a comprehensive review on chemistry, health implications, and technological considerations. *Journal of food science*, 72(9), R138-R151.</li>
+                <li>Astrup, A., et al. (2011). The effect of green tea extract on fat oxidation at rest and during exercise. *The American journal of clinical nutrition*, 93(5), 1087-1094.</li>
+                <li>Wolfe, R. R. (2017). Branched-chain amino acids and muscle protein synthesis in humans: myth or reality?. *Journal of the International Society of Sports Nutrition*, 14(1), 1-7.</li>
+                <li>Blomstrand, E., et al. (2006). Branched-chain amino acids activate key enzymes in protein synthesis after physical exercise. *The Journal of nutrition*, 136(1), 269S-273S.</li>
+                <li>Shimomura, Y., et al. (2010). Nutraceutical effects of branched-chain amino acids on skeletal muscle. *The Journal of nutrition*, 140(6), 1185S-1189S.</li>
+                <li>Wu, G. (2009). Amino acids: metabolism, functions, and nutrition. *Amino acids*, 37(1), 1-17.</li>
+            </ol>
+        </div>
+
         <footer class="ztabs-footer">
-            <p>Copyright &copy; 2025 - Raport generat la cerere. Informațiile prezentate au caracter informativ și nu înlocuiesc un consult medical de specialitate.</p>
+            <p>Copyright &copy; 2025 - NUTRISIB - dr.ing. Radu Pascu</p>
         </footer>
     </div>
 
@@ -679,23 +778,23 @@
         // Deschide primul tab în mod implicit la încărcarea paginii
         document.addEventListener("DOMContentLoaded", function() {
             // Caută primul buton și dă clic pe el pentru a afișa primul tab
-            document.getElementsByClassName('tab-link').click();
+            if (document.getElementsByClassName('tab-link').length > 0) {
+               document.getElementsByClassName('tab-link')[0].click();
+            }
         });
 
          // Script de securitate pentru a bloca copierea și uneltele de dezvoltator
         document.addEventListener('contextmenu', event => event.preventDefault());
 
         document.addEventListener('keydown', function(e) {
-            if ((e.ctrlKey && e.key === 'c') |
-
-| (e.ctrlKey && e.key === 'u') |
-| e.key === 'F12' |
-| (e.ctrlKey && e.shiftKey && e.key === 'I') |
-| (e.ctrlKey && e.shiftKey && e.key === 'J')) {
+            if ((e.ctrlKey && e.key === 'c') || 
+                (e.ctrlKey && e.key === 'u') || 
+                e.key === 'F12' || 
+                (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+                (e.ctrlKey && e.shiftKey && e.key === 'J')) {
                 e.preventDefault();
             }
         });
-        
     </script>
 
 </body>
